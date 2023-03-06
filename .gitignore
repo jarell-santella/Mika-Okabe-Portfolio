@@ -2,4 +2,9 @@ node_modules/
 .cache/
 public
 src/gatsby-types.d.ts
+
+# Temporary placeholders
+src/images/placeholders
+
+# Miscellaneous
 .DS_Store
