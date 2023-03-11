@@ -3,18 +3,15 @@ import {
   StyledDiv,
   StyledWebsiteTitleBar,
   StyledWebsiteTitle,
-  StyledLogoContainer,
   StyledPagesBar,
   StyledLink,
   StyledMenuIconContainer,
   StyledMobileWebsiteTitle,
-  StyledMobileLogoContainer,
   StyledMobileLinksContainer,
   StyledMobileLink
 } from "./styles/NavBar.styled"
-import logoImage from "../images/placeholders/1x1placeholder.png"
-import menuIcon from "../images/placeholders/menuplaceholder.png"
-import closeIcon from "../images/placeholders/closeplaceholder.png"
+import menuIcon from "../images/hambmenu120.png"
+import closeIcon from "../images/xicon120.png"
 
 const pages = [
   {
@@ -91,9 +88,6 @@ const NavBar = () => {
     <StyledDiv className={showMenu ? "extended-menu" : "normal-menu"} extended={showMenu}>
       <StyledWebsiteTitleBar>
         <StyledWebsiteTitle>{website_title}</StyledWebsiteTitle>
-        <StyledLogoContainer>
-          <img src={logoImage} alt={logo_alt} width={60} height={60} />
-        </StyledLogoContainer>
       </StyledWebsiteTitleBar>
       <StyledPagesBar>
         {getStyledLinks("normal")}
@@ -101,9 +95,6 @@ const NavBar = () => {
           <img src={showMenu ? closeIcon : menuIcon} width={40} height={40} onClick={() => { setShowMenu((curr) => !curr) }} />
         </StyledMenuIconContainer>
         <StyledMobileWebsiteTitle>{website_title}</StyledMobileWebsiteTitle>
-        <StyledMobileLogoContainer>
-          <img src={logoImage} alt={logo_alt} width={40} height={40} />
-        </StyledMobileLogoContainer>
       </StyledPagesBar>
       <StyledMobileLinksContainer id="mobile-links-container" extended={showMenu}>
         {getStyledLinks("mobile")}
