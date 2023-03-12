@@ -20,6 +20,4 @@ export const SpeakerDeckIFrame = styled.iframe`
   height: calc(90vw / (16/9));
   display: block;
   border: 0px;
-  credentialless: true;
-  loading: lazy;
 `
