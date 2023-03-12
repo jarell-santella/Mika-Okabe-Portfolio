@@ -83,8 +83,8 @@ export const StyledMobileWebsiteTitle = styled.h2`
   display: none;
   position: absolute;
   margin: auto;
-  float: center;
   padding-bottom: 2px;
+  float: center;
   font-size: 40px;
   font-weight: 400;
   font-family: courier, courier new, serif;
