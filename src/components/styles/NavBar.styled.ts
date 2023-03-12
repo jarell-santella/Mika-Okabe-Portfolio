@@ -81,9 +81,9 @@ export const StyledMenuIconContainer = styled.div`
 
 export const StyledMobileWebsiteTitle = styled.h2`
   display: none;
-  position: absolute;
   margin: auto;
   padding-bottom: 2px;
+  position: absolute;
   float: center;
   font-size: 40px;
   font-weight: 400;
