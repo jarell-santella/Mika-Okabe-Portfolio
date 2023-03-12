@@ -32,8 +32,7 @@ const pages = [
   },
 ]
 
-const website_title = "MIKA'S PORTFOLIO"
-const logo_alt = "Mika's portfolio logo"
+const websiteTitle = "MIKA'S PORTFOLIO"
 
 const NavBar = () => {
   const [showMenu, setShowMenu] = useState(false)
@@ -87,14 +86,14 @@ const NavBar = () => {
   return (
     <StyledDiv className={showMenu ? "extended-menu" : "normal-menu"} extended={showMenu}>
       <StyledWebsiteTitleBar>
-        <StyledWebsiteTitle>{website_title}</StyledWebsiteTitle>
+        <StyledWebsiteTitle>{websiteTitle}</StyledWebsiteTitle>
       </StyledWebsiteTitleBar>
       <StyledPagesBar>
         {getStyledLinks("normal")}
         <StyledMenuIconContainer>
           <img src={showMenu ? closeIcon : menuIcon} width={40} height={40} onClick={() => { setShowMenu((curr) => !curr) }} />
         </StyledMenuIconContainer>
-        <StyledMobileWebsiteTitle>{website_title}</StyledMobileWebsiteTitle>
+        <StyledMobileWebsiteTitle>{websiteTitle}</StyledMobileWebsiteTitle>
       </StyledPagesBar>
       <StyledMobileLinksContainer id="mobile-links-container" extended={showMenu}>
         {getStyledLinks("mobile")}
