@@ -33,7 +33,6 @@ const pages = [
 ]
 
 const website_title = "MIKA'S PORTFOLIO"
-const logo_alt = "Mika's portfolio logo"
 
 const NavBar = () => {
   const [showMenu, setShowMenu] = useState(false)
