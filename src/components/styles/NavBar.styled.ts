@@ -35,10 +35,6 @@ export const StyledWebsiteTitle = styled.h1`
   color: black;
 `
 
-export const StyledLogoContainer = styled.div`
-  margin-left: 13px;
-  margin-right: 13px;
-`
 
 export const StyledPagesBar = styled.div`
   height: 60px;
@@ -74,6 +70,8 @@ export const StyledMenuIconContainer = styled.div`
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 10px;
+  margin-right: auto;
+  float: left;
   cursor: pointer;
 
   @media only screen and (max-width: 800px) {
@@ -83,7 +81,9 @@ export const StyledMenuIconContainer = styled.div`
 
 export const StyledMobileWebsiteTitle = styled.h2`
   display: none;
+  position: absolute;
   margin: auto;
+  float: center;
   padding-bottom: 2px;
   font-size: 40px;
   font-weight: 400;
@@ -106,18 +106,11 @@ export const StyledMobileWebsiteTitle = styled.h2`
   }
 
   @media only screen and (max-width: 325px) {
-    overflow: hidden;
+    width: 190px;
   }
-`
 
-export const StyledMobileLogoContainer = styled.div`
-  display: none;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-right: 10px;
-
-  @media only screen and (max-width: 800px) {
-    display: flex;
+  @media only screen and (max-width: 230px) {
+    visibility: hidden;
   }
 `
 
