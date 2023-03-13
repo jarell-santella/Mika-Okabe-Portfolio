@@ -44,13 +44,13 @@ export const StyledPagesBar = styled.div`
 `
 
 export const StyledLink = styled(Link)`
+  margin-left: 30px;
+  margin-right: 30px;
   font-size: 25px;
   font-family: courier, courier new, serif;
   text-align: center;
   text-decoration: none;
   color: black;
-  margin-left: 30px;
-  margin-right: 30px;
 
   &:hover {
     color: #9090FF;
@@ -90,11 +90,11 @@ export const StyledMobileWebsiteTitle = styled.h2`
   font-family: courier, courier new, serif;
   text-align: center;
   color: black;
-  justify-content: center;
-  align-items: center;
 
   @media only screen and (max-width: 800px) {
     display: flex;
+    justify-content: center;
+    align-items: center; 
   }
 
   @media only screen and (max-width: 525px) {
@@ -133,13 +133,13 @@ export const StyledMobileLinksContainer = styled.div<{ extended: boolean }>`
 `
 
 export const StyledMobileLink = styled(Link)`
+  margin-top: 15px;
+  margin-bottom: 15px;
   font-size: 25px;
   font-family: courier, courier new, serif;
   text-align: center;
   text-decoration: none;
   color: black;
-  margin-top: 15px;
-  margin-bottom: 15px;
 
   &:hover {
     color: #9090FF;
