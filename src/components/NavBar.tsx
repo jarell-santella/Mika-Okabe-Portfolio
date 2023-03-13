@@ -32,7 +32,7 @@ const pages = [
   },
 ]
 
-const websiteTitle = "MIKA'S PORTFOLIO"
+const websiteTitle = "MIKA OKABE"
 
 const NavBar = () => {
   const [showMenu, setShowMenu] = useState(false)

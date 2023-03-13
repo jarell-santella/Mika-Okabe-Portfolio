@@ -97,19 +97,19 @@ export const StyledMobileWebsiteTitle = styled.h2`
     align-items: center; 
   }
 
-  @media only screen and (max-width: 525px) {
+  @media only screen and (max-width: 375px) {
     font-size: 30px;
   }
 
-  @media only screen and (max-width: 425px) {
+  @media only screen and (max-width: 310px) {
     font-size: 20px;
   }
 
-  @media only screen and (max-width: 325px) {
-    width: 190px;
+  @media only screen and (max-width: 250px) {
+    width: 90px;
   }
 
-  @media only screen and (max-width: 230px) {
+  @media only screen and (max-width: 175px) {
     visibility: hidden;
   }
 `
