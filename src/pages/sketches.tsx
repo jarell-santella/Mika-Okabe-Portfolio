@@ -1,7 +1,7 @@
 import * as React from "react"
 import type { HeadFC } from "gatsby"
-import NavBar from "../components/NavBar"
 import { GlobalStyle } from "../components/styles/GlobalStyles.styled"
+import NavBar from "../components/NavBar"
 
 const SketchesPage = () => {
   return (
