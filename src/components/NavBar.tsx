@@ -84,7 +84,7 @@ const NavBar = () => {
   }, [showMenu])
 
   return (
-    <StyledDiv className={showMenu ? "extended-menu" : "normal-menu"} extended={showMenu}>
+    <StyledDiv extended={showMenu}>
       <StyledWebsiteTitleBar>
         <StyledWebsiteTitle>{websiteTitle}</StyledWebsiteTitle>
       </StyledWebsiteTitleBar>
