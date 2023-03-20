@@ -10,7 +10,7 @@ export const StyledDiv = styled.div<{ extended: boolean }>`
   background-color: white;
 
   @media only screen and (max-width: 800px) {
-    max-height: ${props => (props.extended ? "100vh" : "60px")};
+    max-height: ${props => props.extended ? "100vh" : "60px"};
     top: 0px;
   }
 `
@@ -116,11 +116,11 @@ export const StyledMobileWebsiteTitle = styled.h2`
 
 export const StyledMobileLinksContainer = styled.div<{ extended: boolean }>`
   width: 100%;
-  height: ${props => (props.extended ? "calc(100vh - 60px)" : "0vh")};
+  height: ${props => props.extended ? "calc(100vh - 60px)" : "0vh"};
   display: flex;
   padding-top: 10vh;
   position: absolute;
-  visibility: ${(props) => (props.extended ? "visible" : "hidden")};
+  visibility: ${props => props.extended ? "visible" : "hidden"};
   overflow: hidden;
   align-items: center;
   flex-direction: column;
