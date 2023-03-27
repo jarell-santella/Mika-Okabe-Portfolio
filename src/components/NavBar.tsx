@@ -35,23 +35,23 @@ const pages = [
 const websiteTitle = "MIKA OKABE"
 
 const NavBar = () => {
-  const [showMenu, setShowMenu] = useState(false)
-  const [scrollPosition, setScrollPosition] = useState(0)
+  const [showMenu, setShowMenu] = useState<boolean>(false)
+  const [scrollPosition, setScrollPosition] = useState<number>(0)
 
   const getStyledLinks = (type: string) => {
     if (type === "normal") {
-      return (pages.map(page => (
+      return (pages.map((page) => (
         <StyledLink key={page.route} to={page.route}>{page.title}</StyledLink>
       )))
     } else if (type === "mobile") {
-      return (pages.map(page => (
+      return (pages.map((page) => (
         <StyledMobileLink key={page.route} to={page.route}>{page.title}</StyledMobileLink>
       )))
     }
   }
 
   const handleResize = () => {
-    if (window.innerWidth > 800) {
+    if (window.innerWidth >= 800) {
       setShowMenu(false)
     }
   }
@@ -91,7 +91,7 @@ const NavBar = () => {
       <StyledPagesBar>
         {getStyledLinks("normal")}
         <StyledMenuIconContainer>
-          <img src={showMenu ? closeIcon : menuIcon} width={40} height={40} onClick={() => { setShowMenu((curr) => !curr) }} />
+          <img src={showMenu ? closeIcon : menuIcon} width={40} height={40} onClick={() => { setShowMenu((curr) => (!curr)) }} />
         </StyledMenuIconContainer>
         <StyledMobileWebsiteTitle>{websiteTitle}</StyledMobileWebsiteTitle>
       </StyledPagesBar>
