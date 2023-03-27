@@ -10,7 +10,7 @@ export const StyledDiv = styled.div<{ extended: boolean }>`
   background-color: white;
 
   @media only screen and (max-width: 800px) {
-    max-height: ${props => props.extended ? "100vh" : "60px"};
+    max-height: ${(props) => (props.extended ? "100vh" : "60px")};
     top: 0px;
   }
 `
@@ -92,9 +92,7 @@ export const StyledMobileWebsiteTitle = styled.h2`
   color: black;
 
   @media only screen and (max-width: 800px) {
-    display: flex;
-    justify-content: center;
-    align-items: center; 
+    display: block;
   }
 
   @media only screen and (max-width: 375px) {
@@ -116,19 +114,19 @@ export const StyledMobileWebsiteTitle = styled.h2`
 
 export const StyledMobileLinksContainer = styled.div<{ extended: boolean }>`
   width: 100%;
-  height: ${props => props.extended ? "calc(100vh - 60px)" : "0vh"};
-  display: flex;
+  height: ${(props) => (props.extended ? "calc(100vh - 60px)" : "0vh")};
+  display: none;
   padding-top: 10vh;
   position: absolute;
-  visibility: ${props => props.extended ? "visible" : "hidden"};
+  visibility: ${(props) => (props.extended ? "visible" : "hidden")};
   overflow: hidden;
   align-items: center;
   flex-direction: column;
   background-color: white;
   transition: height 0.4s ease-in-out, visibility 0.4s;
 
-  @media only screen and (min-width: 800px) {
-    display: none;
+  @media only screen and (max-width: 800px) {
+    display: flex;
   }
 `
 
