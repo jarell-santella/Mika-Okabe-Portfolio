@@ -50,29 +50,24 @@ const NavBar = () => {
     }
   }
 
-  const handleResize = () => {
-    if (window.innerWidth >= 800) {
-      setShowMenu(false)
-    }
-  }
-
-  const handleScroll = () => {
-    setScrollPosition(window.pageYOffset)
-  }
-
   useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 800) {
+        setShowMenu(false)
+      }
+    }
+  
+    const handleScroll = () => {
+      setScrollPosition(window.pageYOffset)
+    }
+
     window.addEventListener("resize", handleResize)
-    return () => {
-      window.removeEventListener("resize", handleResize)
-    }
-  })
-
-  useEffect(() => {
     window.addEventListener("scroll", handleScroll)
     return () => {
+      window.removeEventListener("resize", handleResize)
       window.removeEventListener("scroll", handleScroll)
     }
-  })
+  }, [])
 
   useEffect(() => {
     if (showMenu) {
