@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import styled from "styled-components"
 
-export const StyledDiv = styled.div<{ extended: boolean }>`
+export const StyledDiv = styled.div<{ showMenu: boolean }>`
   width: 100%;
   max-height: 150px;
   margin-bottom: 20px;
@@ -10,7 +10,7 @@ export const StyledDiv = styled.div<{ extended: boolean }>`
   background-color: white;
 
   @media only screen and (max-width: 800px) {
-    max-height: ${(props) => (props.extended ? "100vh" : "60px")};
+    max-height: ${(props) => (props.showMenu ? "100vh" : "60px")};
     top: 0px;
   }
 `
@@ -112,13 +112,13 @@ export const StyledMobileWebsiteTitle = styled.h2`
   }
 `
 
-export const StyledMobileLinksContainer = styled.div<{ extended: boolean }>`
+export const StyledMobileLinksContainer = styled.div<{ showMenu: boolean }>`
   width: 100%;
-  height: ${(props) => (props.extended ? "calc(100vh - 60px)" : "0vh")};
+  height: ${(props) => (props.showMenu ? "calc(100vh - 60px)" : "0vh")};
   display: none;
   padding-top: 10vh;
   position: absolute;
-  visibility: ${(props) => (props.extended ? "visible" : "hidden")};
+  visibility: ${(props) => (props.showMenu ? "visible" : "hidden")};
   overflow: hidden;
   align-items: center;
   flex-direction: column;

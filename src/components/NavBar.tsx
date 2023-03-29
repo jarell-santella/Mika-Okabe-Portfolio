@@ -8,7 +8,7 @@ import {
   StyledMenuIconContainer,
   StyledMobileWebsiteTitle,
   StyledMobileLinksContainer,
-  StyledMobileLink
+  StyledMobileLink,
 } from "./styles/NavBar.styled"
 import menuIcon from "../images/hambmenu120.png"
 import closeIcon from "../images/xicon120.png"
@@ -38,25 +38,13 @@ const NavBar = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false)
   const [scrollPosition, setScrollPosition] = useState<number>(0)
 
-  const getStyledLinks = (type: string) => {
-    if (type === "normal") {
-      return (pages.map((page) => (
-        <StyledLink key={page.route} to={page.route}>{page.title}</StyledLink>
-      )))
-    } else if (type === "mobile") {
-      return (pages.map((page) => (
-        <StyledMobileLink key={page.route} to={page.route}>{page.title}</StyledMobileLink>
-      )))
-    }
-  }
-
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 800) {
         setShowMenu(false)
       }
     }
-  
+
     const handleScroll = () => {
       setScrollPosition(window.pageYOffset)
     }
@@ -79,19 +67,34 @@ const NavBar = () => {
   }, [showMenu])
 
   return (
-    <StyledDiv extended={showMenu}>
+    <StyledDiv showMenu={showMenu}>
       <StyledWebsiteTitleBar>
         <StyledWebsiteTitle>{websiteTitle}</StyledWebsiteTitle>
       </StyledWebsiteTitleBar>
       <StyledPagesBar>
-        {getStyledLinks("normal")}
+        {pages.map((page) => (
+          <StyledLink key={page.route} to={page.route}>
+            {page.title}
+          </StyledLink>
+        ))}
         <StyledMenuIconContainer>
-          <img src={showMenu ? closeIcon : menuIcon} width={40} height={40} onClick={() => { setShowMenu((curr) => (!curr)) }} />
+          <img
+            src={showMenu ? closeIcon : menuIcon}
+            width={40}
+            height={40}
+            onClick={() => {
+              setShowMenu((curr) => !curr)
+            }}
+          />
         </StyledMenuIconContainer>
         <StyledMobileWebsiteTitle>{websiteTitle}</StyledMobileWebsiteTitle>
       </StyledPagesBar>
-      <StyledMobileLinksContainer id="mobile-links-container" extended={showMenu}>
-        {getStyledLinks("mobile")}
+      <StyledMobileLinksContainer showMenu={showMenu}>
+        {pages.map((page) => (
+          <StyledMobileLink key={page.route} to={page.route}>
+            {page.title}
+          </StyledMobileLink>
+        ))}
       </StyledMobileLinksContainer>
     </StyledDiv>
   )
