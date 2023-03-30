@@ -10,8 +10,8 @@ import {
   StyledMobileLinksContainer,
   StyledMobileLink,
 } from "./styles/NavBar.styled"
-import menuIcon from "../images/hambmenu120.png"
-import closeIcon from "../images/xicon120.png"
+import MenuIcon from "../images/hambmenu120.png"
+import CloseIcon from "../images/xicon120.png"
 
 const pages = [
   {
@@ -79,7 +79,7 @@ const NavBar = () => {
         ))}
         <StyledMenuIconContainer>
           <img
-            src={showMenu ? closeIcon : menuIcon}
+            src={showMenu ? CloseIcon : MenuIcon}
             width={40}
             height={40}
             onClick={() => {
