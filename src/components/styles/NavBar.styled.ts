@@ -52,11 +52,11 @@ export const StyledLink = styled(Link)`
   color: black;
 
   &:hover {
-    color: #9090ff;
+    color: #9090FF;
   }
 
   &:active {
-    color: #ccccff;
+    color: #CCCCFF;
   }
 
   @media only screen and (max-width: 800px) {
@@ -139,10 +139,10 @@ export const StyledMobileLink = styled(Link)`
   color: black;
 
   &:hover {
-    color: #9090ff;
+    color: #9090FF;
   }
 
   &:active {
-    color: #ccccff;
+    color: #CCCCFF;
   }
 `
