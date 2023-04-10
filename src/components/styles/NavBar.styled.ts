@@ -8,6 +8,7 @@ export const StyledDiv = styled.div<{ showMenu: boolean }>`
   position: sticky;
   top: -90px;
   background-color: white;
+  z-index: 1;
 
   @media only screen and (max-width: 800px) {
     max-height: ${(props) => (props.showMenu ? "100vh" : "60px")};
