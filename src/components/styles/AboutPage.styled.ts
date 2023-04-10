@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { EmailOutlined, Instagram } from "@mui/icons-material"
 
 export const StyledLayoutGrid = styled.div`
   width: 90vw;
@@ -8,7 +9,7 @@ export const StyledLayoutGrid = styled.div`
   margin-left: auto;
   margin-right: auto;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr;
   grid-gap: 20px;
 `
 
@@ -42,14 +43,22 @@ export const StyledParagraph = styled.p`
 
 export const StyledLinksGrid = styled.div`
   display: grid;
-  grid-template-columns: auto 1fr;
-  grid-gap: 10px;
+  grid-template-columns: auto auto;
+  grid-gap: 20px;
   grid-column: 1 / -1;
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: auto;
   margin-right: auto;
   align-items: center;
+
+  @media only screen and (max-width: 420px) {
+    grid-template-columns: auto;
+  }
+
+  @media only screen and (max-width: 240px) {
+    grid-template-columns: auto auto;
+  }
 `
 
 export const StyledLink = styled.a`
@@ -64,5 +73,21 @@ export const StyledLink = styled.a`
 
   &:active {
     color: #CCCCFF;
+  }
+`
+
+export const StyledEmailIcon = styled(EmailOutlined)`
+  margin-right: 10px;
+  vertical-align: -25%;
+`
+
+export const StyledInstagramIcon = styled(Instagram)`
+  margin-right: 10px;
+  vertical-align: -25%;
+`
+
+export const StyledSpan = styled.span`
+  @media only screen and (max-width: 240px) {
+    display: none;
   }
 `

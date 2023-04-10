@@ -8,9 +8,11 @@ import {
   StyledParagraph,
   StyledLinksGrid,
   StyledLink,
+  StyledEmailIcon,
+  StyledInstagramIcon,
+  StyledSpan,
 } from "../components/styles/AboutPage.styled"
 import bioIcon from "../images/placeholders/1x1placeholder.png"
-import { EmailOutlined, Instagram } from "@mui/icons-material"
 
 const AboutPage = () => {
   return (
@@ -31,13 +33,13 @@ const AboutPage = () => {
           rutrum. Ut hendrerit lacus risus, sed gravida nulla mollis id.
         </StyledParagraph>
         <StyledLinksGrid>
-          <EmailOutlined />
           <StyledLink href="mailto:mikaokabe@gmail.com">
-            mikaokabe@gmail.com
+            <StyledEmailIcon />
+            <StyledSpan>mikaokabe@gmail.com</StyledSpan>
           </StyledLink>
-          <Instagram />
           <StyledLink href="https://instagram.com/wishterias" target="_blank">
-            @wishterias
+            <StyledInstagramIcon />
+            <StyledSpan>@wishterias</StyledSpan>
           </StyledLink>
         </StyledLinksGrid>
       </StyledLayoutGrid>
