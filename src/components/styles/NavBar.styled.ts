@@ -35,7 +35,6 @@ export const StyledWebsiteTitle = styled.h1`
   color: black;
 `
 
-
 export const StyledPagesBar = styled.div`
   height: 60px;
   display: flex;
@@ -53,11 +52,11 @@ export const StyledLink = styled(Link)`
   color: black;
 
   &:hover {
-    color: #9090FF;
+    color: #9090ff;
   }
 
   &:active {
-    color: #CCCCFF;
+    color: #ccccff;
   }
 
   @media only screen and (max-width: 800px) {
@@ -140,10 +139,10 @@ export const StyledMobileLink = styled(Link)`
   color: black;
 
   &:hover {
-    color: #9090FF;
+    color: #9090ff;
   }
 
   &:active {
-    color: #CCCCFF;
+    color: #ccccff;
   }
 `
