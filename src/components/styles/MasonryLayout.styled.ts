@@ -26,15 +26,11 @@ export const StyledMasonryColumn = styled.div<{
 }>`
   width: ${(props) => props.columnWidth}px;
   display: flex;
-  margin: ${(props) => props.spacing}px ${(props) => props.spacing / 2}px;
+  margin-right: ${(props) => props.spacing}px;
   align-items: center;
   flex-direction: column;
 
-  &:first-child {
-    margin-left: ${(props) => props.spacing}px;
-  }
-
   &:last-child {
-    margin-right: ${(props) => props.spacing}px;
+    margin-right: 0px;
   }
 `
