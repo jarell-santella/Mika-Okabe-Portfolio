@@ -4,7 +4,7 @@ public
 src/gatsby-types.d.ts
 
 # Temporary placeholders
-src/images/placeholders
+**/placeholders
 
 # Miscellaneous
 .DS_Store
