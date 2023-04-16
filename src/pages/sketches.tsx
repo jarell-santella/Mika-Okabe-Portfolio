@@ -1,5 +1,6 @@
 import * as React from "react"
 import type { HeadFC } from "gatsby"
+import { SEO } from "../components/SEO"
 import { GlobalStyle } from "../components/styles/GlobalStyles.styled"
 import NavBar from "../components/NavBar"
 import { StyledSketchesContainer } from "../components/styles/SketchesPage.styled"
@@ -45,4 +46,6 @@ const SketchesPage = () => {
 
 export default SketchesPage
 
-export const Head: HeadFC = () => <title>Mika's Portfolio</title>
+export const Head: HeadFC = () => (
+  <SEO pathname="/sketches" keywords="sketches, sketch book" />
+)
