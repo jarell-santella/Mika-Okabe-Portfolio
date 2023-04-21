@@ -34,7 +34,7 @@ const PersonalPage = () => {
       <GlobalStyle />
       <NavBar />
       <StyledMediaContainer>
-        <MasonryLayout columnWidth={400} spacing={20}>
+        <MasonryLayout columnWidth={400} spacing={15}>
           {media.map((media, index) => (
             <ClickableImage
               key={index}

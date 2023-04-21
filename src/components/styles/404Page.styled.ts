@@ -1,13 +1,17 @@
 import styled from "styled-components"
 
 export const StyledText = styled.p`
+  /* Box model properties */
   width: 90vw;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 20px auto;
+
+  /* Layout properties */
+  text-align: center;
+
+  /* Typography properties */
   font-size: 20px;
   font-family: courier, courier new, serif;
-  text-align: center;
-  color: black;
+
+  /* Color properties */
+  color: #000000;
 `

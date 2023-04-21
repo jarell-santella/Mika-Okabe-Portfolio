@@ -6,6 +6,7 @@ import {
   StyledPagesBar,
   StyledLink,
   StyledMenuIconContainer,
+  StyledImg,
   StyledMobileWebsiteTitle,
   StyledMobileLinksContainer,
   StyledMobileLink,
@@ -78,10 +79,8 @@ const NavBar = () => {
           </StyledLink>
         ))}
         <StyledMenuIconContainer>
-          <img
+          <StyledImg
             src={showMenu ? closeIcon : menuIcon}
-            width={40}
-            height={40}
             onClick={() => {
               setShowMenu((curr) => !curr)
             }}
