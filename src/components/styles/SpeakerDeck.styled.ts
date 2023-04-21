@@ -18,7 +18,7 @@ export const SpeakerDeckTitle = styled.h3`
 export const SpeakerDeckIFrame = styled.iframe`
   /* Box model properties */
   width: 100%;
-  height: calc(90vw / (16 / 9));
+  aspect-ratio: 16 / 9;
   border: 0px;
 
   /* Layout properties */

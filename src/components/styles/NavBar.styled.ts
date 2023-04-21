@@ -4,8 +4,9 @@ import styled from "styled-components"
 export const StyledDiv = styled.div<{ showMenu: boolean }>`
   /* Box model properties */
   width: 100%;
+  max-width: 1230px;
   max-height: 150px;
-  margin-bottom: 20px;
+  margin: 0px auto 20px auto;
 
   /* Positional properties */
   position: sticky;
@@ -14,6 +15,11 @@ export const StyledDiv = styled.div<{ showMenu: boolean }>`
 
   /* Color properties */
   background-color: #FFFFFF;
+
+  /* Selectors */
+  & ~ * {
+    max-width: 1230px;
+  }
 
   /* Media queries */
   @media only screen and (max-width: 800px) {
@@ -114,6 +120,24 @@ export const StyledMenuIconContainer = styled.div`
     /* Layout properties */
     display: flex;
   }
+
+  @media only screen and (max-width: 175px) {
+    /* Box model properties */
+    margin: 15px auto 15px 10px;
+  }
+`
+
+export const StyledImg = styled.img`
+  /* Box model properties */
+  width: 40px;
+  height: 40px;
+
+  /* Media queries */
+  @media only screen and (max-width: 175px) {
+    /* Box model properties */
+    width: 30px;
+    height: 30px;
+  }
 `
 
 export const StyledMobileWebsiteTitle = styled.h2`
@@ -153,12 +177,15 @@ export const StyledMobileWebsiteTitle = styled.h2`
 
   @media only screen and (max-width: 250px) {
     /* Box model properties */
-    width: 90px;
+    width: 65px;
   }
 
   @media only screen and (max-width: 175px) {
-    /* Visibility properties */
-    visibility: hidden;
+    /* Box model properties */
+    width: 50px;
+
+    /* Typography properties */
+    font-size: 15px;
   }
 `
 
