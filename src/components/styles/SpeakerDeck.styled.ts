@@ -1,23 +1,26 @@
 import styled from "styled-components"
 
 export const StyledDiv = styled.div`
+  /* Box model properties */
   width: 90vw;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 20px auto;
 `
 
 export const SpeakerDeckTitle = styled.h3`
-  margin-top: 0px;
-  margin-bottom: 10px;
+  /* Box model properties */
+  margin: 0px auto 10px;
+
+  /* Typography properties */
   font-size: 25px;
   font-family: courier, courier new, serif;
 `
 
 export const SpeakerDeckIFrame = styled.iframe`
+  /* Box model properties */
   width: 100%;
-  height: calc(90vw / (16/9));
-  display: block;
+  height: calc(90vw / (16 / 9));
   border: 0px;
+
+  /* Layout properties */
+  display: block;
 `
