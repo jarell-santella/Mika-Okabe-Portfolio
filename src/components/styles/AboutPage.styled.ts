@@ -8,7 +8,7 @@ import {
 
 export const StyledLayoutGrid = styled.div`
   /* Box model properties */
-  width: 90vw;
+  width: 90%;
   margin: 20px auto;
 
   /* Layout properties */

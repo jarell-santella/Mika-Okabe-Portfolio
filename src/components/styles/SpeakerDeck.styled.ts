@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const StyledDiv = styled.div`
   /* Box model properties */
-  width: 90vw;
+  width: 90%;
   margin: 20px auto;
 `
 

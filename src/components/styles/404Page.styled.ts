@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const StyledText = styled.p`
   /* Box model properties */
-  width: 90vw;
+  width: 90%;
   margin: 20px auto;
 
   /* Positional properties */
