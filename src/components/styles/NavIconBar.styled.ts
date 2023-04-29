@@ -18,6 +18,7 @@ export const StyledDiv = styled.div<{
   }
 
   & svg {
+    /* Box model properties */
     width: ${(props) => props.iconWidth}px;
     height: ${(props) => props.iconHeight}px;
   }

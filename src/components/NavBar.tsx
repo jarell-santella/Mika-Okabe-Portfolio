@@ -9,14 +9,12 @@ import {
   StyledPagesBar,
   StyledLink,
   StyledMenuIconContainer,
-  StyledImg,
   StyledMobileWebsiteTitle,
   StyledMobileLinksContainer,
   StyledMobileLink,
   StyledMobileIconBarContainer,
 } from "./styles/NavBar.styled"
-import menuIcon from "../images/hambmenu120.png"
-import closeIcon from "../images/xicon120.png"
+import { MenuRounded, CloseRounded } from "@mui/icons-material"
 
 const pages = [
   {
@@ -42,19 +40,31 @@ const websiteTitle = "Mika Okabe"
 const NavBar = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false)
   const [scrollPosition, setScrollPosition] = useState<number>(0)
+  const [iconSize, setIconSize] = useState<number>(20)
 
   const { t, language } = useI18next()
 
   useEffect(() => {
-    const handleResize = () => {
+    const handleShowMenu = () => {
       if (window.innerWidth >= 800) {
         setShowMenu(false)
       }
     }
 
+    const handleIconSize = () => {
+      window.innerWidth > 250 ? setIconSize(25) : setIconSize(20)
+    }
+
+    const handleResize = () => {
+      handleShowMenu()
+      handleIconSize()
+    }
+
     const handleScroll = () => {
       setScrollPosition(window.scrollY)
     }
+
+    handleIconSize()
 
     window.addEventListener("resize", handleResize)
     window.addEventListener("scroll", handleScroll)
@@ -88,14 +98,15 @@ const NavBar = () => {
           </StyledLink>
         ))}
         <StyledMenuIconContainer>
-          <StyledImg
-            src={showMenu ? closeIcon : menuIcon}
-            onClick={() => {
-              setShowMenu((curr) => !curr)
-            }}
-          />
+          {showMenu ? (
+            <MenuRounded onClick={() => setShowMenu(false)} />
+          ) : (
+            <CloseRounded onClick={() => setShowMenu(true)} />
+          )}
         </StyledMenuIconContainer>
-        <StyledMobileWebsiteTitle>{t(websiteTitle)}</StyledMobileWebsiteTitle>
+        <StyledMobileWebsiteTitle>
+          {t(websiteTitle).toUpperCase()}
+        </StyledMobileWebsiteTitle>
       </StyledPagesBar>
       <StyledMobileLinksContainer showMenu={showMenu}>
         {pages.map((page) => (
@@ -108,7 +119,11 @@ const NavBar = () => {
           </StyledMobileLink>
         ))}
         <StyledMobileIconBarContainer>
-          <NavIconBar iconWidth={25} iconHeight={25} iconSpacing={10} />
+          <NavIconBar
+            iconWidth={iconSize}
+            iconHeight={iconSize}
+            iconSpacing={5}
+          />
         </StyledMobileIconBarContainer>
       </StyledMobileLinksContainer>
     </StyledDiv>

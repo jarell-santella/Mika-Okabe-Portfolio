@@ -127,23 +127,35 @@ export const StyledMenuIconContainer = styled.div`
   /* User interface properties */
   cursor: pointer;
 
+  /* Selectors */
+  & svg {
+    /* Box model properties */
+    width: 40px;
+    height: 40px;
+
+    /* Selectors */
+    &:hover {
+      /* Color properties */
+      color: #9090FF;
+    }
+
+    &:active {
+      /* Color properties */
+      color: #CCCCFF;
+    }
+
+    /* Media queries */
+    @media only screen and (max-width: 175px) {
+      /* Box model properties */
+      width: 30px;
+      height: 30px;
+    }
+  }
+
   /* Media queries */
   @media only screen and (max-width: 800px) {
     /* Layout properties */
     display: flex;
-  }
-`
-
-export const StyledImg = styled.img`
-  /* Box model properties */
-  width: 40px;
-  height: 40px;
-
-  /* Media queries */
-  @media only screen and (max-width: 175px) {
-    /* Box model properties */
-    width: 30px;
-    height: 30px;
   }
 `
 
@@ -248,6 +260,12 @@ export const StyledMobileLink = styled(Link)`
   &:active {
     /* Color properties */
     color: #CCCCFF;
+  }
+
+  /* Media queries */
+  @media only screen and (max-width: 250px) {
+    /* Typography properties */
+    font-size: 20px;
   }
 `
 
