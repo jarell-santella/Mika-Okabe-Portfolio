@@ -40,7 +40,7 @@ const AboutPage = () => {
             <StyledSpan>@wishterias</StyledSpan>
           </StyledLink>
           <StyledLink
-            href="https://www.linkedin.com/in/mikaokabe/"
+            href="https://www.linkedin.com/in/mikaokabe"
             target="_blank"
           >
             <StyledLinkedInIcon />
