@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react"
 import {
-  StyledImage,
+  StyledImg,
   StyledBackground,
-  StyledImageModal,
+  StyledImgModal,
   StyledCloseIcon,
 } from "./styles/ClickableImage.styled"
 
@@ -21,11 +21,9 @@ const ClickableImage = ({ src, alt, width, height }: ClickableImageProps) => {
   const imageRef = useRef<HTMLImageElement>(null)
 
   useEffect(() => {
-    if (showModal) {
-      document.body.style.overflow = "hidden"
-    } else {
-      document.body.style.overflow = "visible"
-    }
+    showModal
+      ? (document.body.style.overflow = "hidden")
+      : (document.body.style.overflow = "visible")
   }, [showModal])
 
   const handleSettingWidthLongest = () => {
@@ -69,7 +67,7 @@ const ClickableImage = ({ src, alt, width, height }: ClickableImageProps) => {
 
   return (
     <>
-      <StyledImage
+      <StyledImg
         ref={imageRef}
         src={src}
         alt={alt}
@@ -89,7 +87,7 @@ const ClickableImage = ({ src, alt, width, height }: ClickableImageProps) => {
           setShowModal(false)
         }}
       >
-        <StyledImageModal
+        <StyledImgModal
           src={src}
           alt={alt}
           onClick={(event) => {
