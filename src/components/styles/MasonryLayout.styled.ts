@@ -16,7 +16,7 @@ export const StyledMasonryItem = styled.div<{ spacing: number }>`
     /* Box model properties */
     width: 100%;
     height: 100%;
-    
+
     /* Layout properties */
     display: block;
   }
