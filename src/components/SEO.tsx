@@ -36,7 +36,7 @@ export const SEO = ({
     twitterUsername,
   } = useSiteMetadata()
 
-  const defaultTransKeywords = t(defaultKeywords.replace(/\s+/g, " "))
+  const defaultTransKeywords = t(defaultKeywords.replace(/\s+/g, ""))
 
   const seo = {
     title: t(title || defaultTitle),
@@ -46,7 +46,7 @@ export const SEO = ({
     type,
     url: `${siteUrl}${pathname || ``}`,
     keywords: keywords
-      ? `${defaultTransKeywords}, ${keywords}`
+      ? `${defaultTransKeywords},${keywords}`
       : defaultTransKeywords,
     locale: language === "en" ? locales[0] : locales[1],
     localeAlternative: language === "en" ? locales[1] : locales[0],
@@ -68,6 +68,10 @@ export const SEO = ({
       <meta property="og:type" content={seo.type} />
       <meta property="og:url" content={seo.url} />
       <meta property="og:image" content={seo.openGraphImage} />
+      <meta
+        property="og:image:alt"
+        content="Lorem ipsum dolor sit amet, consectetur tincidunt."
+      />
       <meta property="og:locale" content={seo.locale} />
       <meta property="og:locale:alternative" content={seo.localeAlternative} />
       <meta name="twitter:card" content="summary_large_image" />

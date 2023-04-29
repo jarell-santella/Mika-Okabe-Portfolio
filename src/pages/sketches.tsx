@@ -51,7 +51,7 @@ export default SketchesPage
 export const Head: HeadFC = () => {
   const t = useTranslation(jpSketchesLocales)
 
-  return <SEO pathname="/sketches" keywords={t("sketches, sketch book")} />
+  return <SEO pathname="/sketches" keywords={t("sketches,sketch book")} />
 }
 
 export const query = graphql`
