@@ -53,7 +53,7 @@ const NavBar = () => {
     }
 
     const handleScroll = () => {
-      setScrollPosition(window.pageYOffset)
+      setScrollPosition(window.scrollY)
     }
 
     window.addEventListener("resize", handleResize)
@@ -78,7 +78,7 @@ const NavBar = () => {
       <StyledWebsiteTitleBar>
         <StyledWebsiteTitle>{t(websiteTitle).toUpperCase()}</StyledWebsiteTitle>
         <StyledIconBarContainer>
-          <NavIconBar iconWidth={40} iconHeight={40} iconSpacing={15} />
+          <NavIconBar iconWidth={25} iconHeight={25} iconSpacing={10} />
         </StyledIconBarContainer>
       </StyledWebsiteTitleBar>
       <StyledPagesBar>
@@ -108,7 +108,7 @@ const NavBar = () => {
           </StyledMobileLink>
         ))}
         <StyledMobileIconBarContainer>
-          <NavIconBar iconWidth={30} iconHeight={30} iconSpacing={10} />
+          <NavIconBar iconWidth={25} iconHeight={25} iconSpacing={10} />
         </StyledMobileIconBarContainer>
       </StyledMobileLinksContainer>
     </StyledDiv>
