@@ -5,7 +5,13 @@ import {
   StyledLink,
   StyledLanguageLink,
 } from "./styles/NavIconBar.styled"
-import { EmailOutlined, Instagram, Translate } from "@mui/icons-material"
+import {
+  EmailOutlined,
+  Instagram,
+  LinkedIn,
+  YouTube,
+  Translate,
+} from "@mui/icons-material"
 
 interface NavIconBarProps {
   iconWidth: number
@@ -31,6 +37,12 @@ const NavIconBar = ({
       </StyledLink>
       <StyledLink href="https://instagram.com/wishterias" target="_blank">
         <Instagram />
+      </StyledLink>
+      <StyledLink href="https://www.linkedin.com/in/mikaokabe/" target="_blank">
+        <LinkedIn />
+      </StyledLink>
+      <StyledLink href="https://www.youtube.com/@wishterias" target="_blank">
+        <YouTube />
       </StyledLink>
       <StyledLanguageLink
         to={originalPath === "/404/" ? "/404.html/" : originalPath}
