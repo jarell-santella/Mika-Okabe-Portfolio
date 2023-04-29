@@ -5,7 +5,7 @@ export const StyledText = styled.p`
   width: 90vw;
   margin: 20px auto;
 
-  /* Layout properties */
+  /* Positional properties */
   text-align: center;
 
   /* Typography properties */

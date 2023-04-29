@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { Close } from "@mui/icons-material"
 
-export const StyledImage = styled.img<{
+export const StyledImg = styled.img<{
   width?: string
   height?: string
   showCursor: boolean
@@ -50,7 +50,7 @@ export const StyledBackground = styled.div<{ showModal: boolean }>`
   transition: visibility 0.2s, opacity 0.2s ease-in-out;
 `
 
-export const StyledImageModal = styled.img<{ widthLongest: boolean }>`
+export const StyledImgModal = styled.img<{ widthLongest: boolean }>`
   /* Box model properties */
   width: ${(props) => (props.widthLongest ? "80%" : "auto")};
   height: ${(props) => (props.widthLongest ? "auto" : "80%")};
