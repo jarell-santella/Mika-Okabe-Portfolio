@@ -1,5 +1,5 @@
 import * as React from "react"
-import type { HeadFC } from "gatsby"
+import { graphql, HeadFC } from "gatsby"
 import { SEO } from "../components/SEO"
 import { GlobalStyle } from "../components/styles/GlobalStyles.styled"
 import NavBar from "../components/NavBar"
@@ -51,3 +51,19 @@ const PersonalPage = () => {
 export default PersonalPage
 
 export const Head: HeadFC = () => <SEO pathname="/personal" />
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(
+      filter: { language: { eq: $language }, ns: { eq: "common" } }
+    ) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`

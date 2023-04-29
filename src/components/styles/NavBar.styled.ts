@@ -1,5 +1,5 @@
-import { Link } from "gatsby"
 import styled from "styled-components"
+import { Link } from "gatsby-plugin-react-i18next"
 
 export const StyledDiv = styled.div<{ showMenu: boolean }>`
   /* Box model properties */
@@ -48,7 +48,8 @@ export const StyledWebsiteTitleBar = styled.div`
 `
 
 export const StyledWebsiteTitle = styled.h1`
-  /* Layout properties */
+  /* Positional properties */
+  position: absolute;
   text-align: center;
 
   /* Typography properties */
@@ -57,6 +58,17 @@ export const StyledWebsiteTitle = styled.h1`
 
   /* Color properties */
   color: #000000;
+`
+
+export const StyledIconBarContainer = styled.div`
+  /* Box model properties */
+  margin: auto 10px auto auto;
+
+  /* Layout properties */
+  display: flex;
+
+  /* Positional properties */
+  float: right;
 `
 
 export const StyledPagesBar = styled.div`
@@ -73,7 +85,7 @@ export const StyledLink = styled(Link)`
   /* Box model properties */
   margin: auto 30px;
 
-  /* Layout properties */
+  /* Positional properties */
   text-align: center;
 
   /* Typography properties */
@@ -104,7 +116,7 @@ export const StyledLink = styled(Link)`
 
 export const StyledMenuIconContainer = styled.div`
   /* Box model properties */
-  margin: 10px auto 10px 10px;
+  margin: auto auto auto 10px;
 
   /* Layout properties */
   display: none;
@@ -119,11 +131,6 @@ export const StyledMenuIconContainer = styled.div`
   @media only screen and (max-width: 800px) {
     /* Layout properties */
     display: flex;
-  }
-
-  @media only screen and (max-width: 175px) {
-    /* Box model properties */
-    margin: 15px auto 15px 10px;
   }
 `
 
@@ -141,9 +148,6 @@ export const StyledImg = styled.img`
 `
 
 export const StyledMobileWebsiteTitle = styled.h2`
-  /* Box model properties */
-  padding-bottom: 2px;
-
   /* Layout properties */
   display: none;
 
@@ -245,4 +249,9 @@ export const StyledMobileLink = styled(Link)`
     /* Color properties */
     color: #CCCCFF;
   }
+`
+
+export const StyledMobileIconBarContainer = styled.div`
+  /* Box model properties */
+  margin: 15px auto;
 `
