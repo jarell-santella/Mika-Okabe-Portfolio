@@ -44,9 +44,7 @@ const MasonryLayout = ({
 
   useLayoutEffect(() => {
     const childrenArray = React.Children.toArray(children)
-    if (numColumns <= 0) {
-      setColumns([[]])
-    } else if (numColumns === 1) {
+    if (numColumns <= 1) {
       setColumns([childrenArray])
     } else if (numColumns === childrenArray.length) {
       setColumns(childrenArray.map((element) => [element]))
