@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { Link } from "gatsby-plugin-react-i18next"
+import { MenuRounded, CloseRounded } from "@mui/icons-material"
 
 export const StyledDiv = styled.div<{ showMenu: boolean }>`
   /* Box model properties */
@@ -127,6 +128,20 @@ export const StyledMenuIconContainer = styled.div`
   /* User interface properties */
   cursor: pointer;
 
+  /* Selectors */
+  & svg {
+    /* Box model properties */
+    width: 40px;
+    height: 40px;
+
+    /* Media queries */
+    @media only screen and (max-width: 175px) {
+      /* Box model properties */
+      width: 30px;
+      height: 30px;
+    }
+  }
+
   /* Media queries */
   @media only screen and (max-width: 800px) {
     /* Layout properties */
@@ -134,16 +149,29 @@ export const StyledMenuIconContainer = styled.div`
   }
 `
 
-export const StyledImg = styled.img`
-  /* Box model properties */
-  width: 40px;
-  height: 40px;
+export const StyledMenuIcon = styled(MenuRounded)`
+  /* Selectors */
+  &:hover {
+    /* Color properties */
+    color: #9090FF;
+  }
 
-  /* Media queries */
-  @media only screen and (max-width: 175px) {
-    /* Box model properties */
-    width: 30px;
-    height: 30px;
+  &:active {
+    /* Color properties */
+    color: #CCCCFF;
+  }
+`
+
+export const StyledCloseIcon = styled(CloseRounded)`
+  /* Selectors */
+  &:hover {
+    /* Color properties */
+    color: #9090FF;
+  }
+
+  &:active {
+    /* Color properties */
+    color: #CCCCFF;
   }
 `
 

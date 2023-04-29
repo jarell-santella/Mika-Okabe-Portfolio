@@ -9,14 +9,13 @@ import {
   StyledPagesBar,
   StyledLink,
   StyledMenuIconContainer,
-  StyledImg,
+  StyledMenuIcon,
+  StyledCloseIcon,
   StyledMobileWebsiteTitle,
   StyledMobileLinksContainer,
   StyledMobileLink,
   StyledMobileIconBarContainer,
 } from "./styles/NavBar.styled"
-import menuIcon from "../images/hambmenu120.png"
-import closeIcon from "../images/xicon120.png"
 
 const pages = [
   {
@@ -100,12 +99,11 @@ const NavBar = () => {
           </StyledLink>
         ))}
         <StyledMenuIconContainer>
-          <StyledImg
-            src={showMenu ? closeIcon : menuIcon}
-            onClick={() => {
-              setShowMenu((curr) => !curr)
-            }}
-          />
+          {showMenu ? (
+            <StyledCloseIcon onClick={() => setShowMenu(false)} />
+          ) : (
+            <StyledMenuIcon onClick={() => setShowMenu(true)} />
+          )}
         </StyledMenuIconContainer>
         <StyledMobileWebsiteTitle>
           {t(websiteTitle).toUpperCase()}
