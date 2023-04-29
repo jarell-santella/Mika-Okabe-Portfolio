@@ -249,6 +249,12 @@ export const StyledMobileLink = styled(Link)`
     /* Color properties */
     color: #CCCCFF;
   }
+
+  /* Media queries */
+  @media only screen and (max-width: 250px) {
+    /* Typography properties */
+    font-size: 20px;
+  }
 `
 
 export const StyledMobileIconBarContainer = styled.div`

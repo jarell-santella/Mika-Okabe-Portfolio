@@ -42,19 +42,31 @@ const websiteTitle = "Mika Okabe"
 const NavBar = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false)
   const [scrollPosition, setScrollPosition] = useState<number>(0)
+  const [iconSize, setIconSize] = useState<number>(20)
 
   const { t, language } = useI18next()
 
   useEffect(() => {
-    const handleResize = () => {
+    const handleShowMenu = () => {
       if (window.innerWidth >= 800) {
         setShowMenu(false)
       }
     }
 
+    const handleIconSize = () => {
+      window.innerWidth > 250 ? setIconSize(25) : setIconSize(20)
+    }
+
+    const handleResize = () => {
+      handleShowMenu()
+      handleIconSize()
+    }
+
     const handleScroll = () => {
       setScrollPosition(window.scrollY)
     }
+
+    handleIconSize()
 
     window.addEventListener("resize", handleResize)
     window.addEventListener("scroll", handleScroll)
@@ -110,7 +122,11 @@ const NavBar = () => {
           </StyledMobileLink>
         ))}
         <StyledMobileIconBarContainer>
-          <NavIconBar iconWidth={25} iconHeight={25} iconSpacing={10} />
+          <NavIconBar
+            iconWidth={iconSize}
+            iconHeight={iconSize}
+            iconSpacing={5}
+          />
         </StyledMobileIconBarContainer>
       </StyledMobileLinksContainer>
     </StyledDiv>
