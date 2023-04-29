@@ -26,7 +26,7 @@ const MasonryLayout = ({
     if (!container) return
     const containerWidth = container.clientWidth
     const newNumColumns = Math.floor(containerWidth / (columnWidth + spacing))
-    containerWidth - (newNumColumns * (columnWidth + spacing)) >= columnWidth
+    containerWidth - newNumColumns * (columnWidth + spacing) >= columnWidth
       ? setNumColumns(newNumColumns + 1)
       : setNumColumns(newNumColumns)
   }

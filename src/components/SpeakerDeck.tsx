@@ -1,5 +1,9 @@
 import * as React from "react"
-import { StyledDiv, SpeakerDeckTitle, SpeakerDeckIFrame } from "./styles/SpeakerDeck.styled"
+import {
+  StyledDiv,
+  SpeakerDeckTitle,
+  SpeakerDeckIFrame,
+} from "./styles/SpeakerDeck.styled"
 
 interface SpeakerDeckProps {
   title: string
