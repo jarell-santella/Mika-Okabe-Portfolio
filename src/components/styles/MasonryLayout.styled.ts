@@ -32,7 +32,7 @@ export const StyledMasonryColumn = styled.div<{
   spacing: number
 }>`
   /* Box model properties */
-  width: ${(props) => props.columnWidth}px;
+  max-width: ${(props) => props.columnWidth}px;
   margin-right: ${(props) => props.spacing}px;
 
   /* Layout properties */
