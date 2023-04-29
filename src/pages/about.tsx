@@ -1,5 +1,7 @@
 import * as React from "react"
-import type { HeadFC } from "gatsby"
+import { graphql, HeadFC } from "gatsby"
+import { Trans } from "gatsby-plugin-react-i18next"
+import { useTranslation } from "../hooks/useTranslation"
 import { SEO } from "../components/SEO"
 import { GlobalStyle } from "../components/styles/GlobalStyles.styled"
 import NavBar from "../components/NavBar"
@@ -13,6 +15,7 @@ import {
   StyledInstagramIcon,
   StyledSpan,
 } from "../components/styles/AboutPage.styled"
+import jpAboutLocales from "../../locales/jp/about.json"
 import bioIcon from "../images/placeholders/1x1placeholder.png"
 
 const AboutPage = () => {
@@ -23,15 +26,7 @@ const AboutPage = () => {
       <StyledLayoutGrid>
         <StyledImg src={bioIcon} alt="Image representation of Mika" />
         <StyledParagraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel
-          euismod ex. Duis mollis metus nunc, ac fringilla risus vestibulum in.
-          Integer purus massa, maximus ut purus vel, varius mattis neque.
-          Maecenas ultrices, erat at pharetra suscipit, risus ipsum iaculis
-          magna, quis faucibus nibh neque sed nisl. Aliquam cursus ex nibh, vel
-          varius tortor dictum eget. Quisque fermentum placerat sapien, ac
-          consequat ipsum volutpat a. Nullam tempus sagittis risus, a accumsan
-          ipsum cursus vitae. Nulla et nisl est. Maecenas venenatis malesuada
-          rutrum. Ut hendrerit lacus risus, sed gravida nulla mollis id.
+          <Trans>bio_text</Trans>
         </StyledParagraph>
         <StyledLinksGrid>
           <StyledLink href="mailto:mikaokabe@gmail.com">
@@ -50,6 +45,24 @@ const AboutPage = () => {
 
 export default AboutPage
 
-export const Head: HeadFC = () => (
-  <SEO pathname="/about" keywords="mika, okabe, mika okabe" />
-)
+export const Head: HeadFC = () => {
+  const t = useTranslation(jpAboutLocales)
+
+  return <SEO pathname="/about" keywords={t("mika, okabe, mika okabe")} />
+}
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(
+      filter: { language: { eq: $language }, ns: { in: ["common", "about"] } }
+    ) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`

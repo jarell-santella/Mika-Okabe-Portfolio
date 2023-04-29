@@ -1,9 +1,12 @@
 import * as React from "react"
-import type { HeadFC } from "gatsby"
+import { graphql, HeadFC } from "gatsby"
+import { useI18next } from "gatsby-plugin-react-i18next"
+import { useTranslation } from "../hooks/useTranslation"
 import { SEO } from "../components/SEO"
 import { GlobalStyle } from "../components/styles/GlobalStyles.styled"
 import NavBar from "../components/NavBar"
 import SpeakerDeck from "../components/SpeakerDeck"
+import jpIndexLocales from "../../locales/jp/index.json"
 
 const speakerDecks = [
   {
@@ -17,12 +20,18 @@ const speakerDecks = [
 ]
 
 const IndexPage = () => {
+  const { t } = useI18next()
+
   return (
     <>
       <GlobalStyle />
       <NavBar />
-      {speakerDecks.map(speakerDeck => (
-        <SpeakerDeck key={speakerDeck.src} title={speakerDeck.title} src={speakerDeck.src}/>
+      {speakerDecks.map((speakerDeck) => (
+        <SpeakerDeck
+          key={speakerDeck.src}
+          title={t(speakerDeck.title)}
+          src={speakerDeck.src}
+        />
       ))}
     </>
   )
@@ -30,4 +39,24 @@ const IndexPage = () => {
 
 export default IndexPage
 
-export const Head: HeadFC = () => <SEO keywords="speakerdeck" />
+export const Head: HeadFC = () => {
+  const t = useTranslation(jpIndexLocales)
+
+  return <SEO keywords={t("speakerdeck")} />
+}
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(
+      filter: { language: { eq: $language }, ns: { in: ["common", "index"] } }
+    ) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`
