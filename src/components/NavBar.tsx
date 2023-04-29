@@ -9,13 +9,12 @@ import {
   StyledPagesBar,
   StyledLink,
   StyledMenuIconContainer,
-  StyledMenuIcon,
-  StyledCloseIcon,
   StyledMobileWebsiteTitle,
   StyledMobileLinksContainer,
   StyledMobileLink,
   StyledMobileIconBarContainer,
 } from "./styles/NavBar.styled"
+import { MenuRounded, CloseRounded } from "@mui/icons-material"
 
 const pages = [
   {
@@ -100,9 +99,9 @@ const NavBar = () => {
         ))}
         <StyledMenuIconContainer>
           {showMenu ? (
-            <StyledCloseIcon onClick={() => setShowMenu(false)} />
+            <MenuRounded onClick={() => setShowMenu(false)} />
           ) : (
-            <StyledMenuIcon onClick={() => setShowMenu(true)} />
+            <CloseRounded onClick={() => setShowMenu(true)} />
           )}
         </StyledMenuIconContainer>
         <StyledMobileWebsiteTitle>
