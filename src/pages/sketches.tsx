@@ -1,11 +1,13 @@
 import * as React from "react"
-import type { HeadFC } from "gatsby"
+import { graphql, HeadFC } from "gatsby"
+import { useTranslation } from "../hooks/useTranslation"
 import { SEO } from "../components/SEO"
 import { GlobalStyle } from "../components/styles/GlobalStyles.styled"
 import NavBar from "../components/NavBar"
 import { StyledSketchesContainer } from "../components/styles/SketchesPage.styled"
 import MasonryLayout from "../components/MasonryLayout"
 import ClickableImage from "../components/ClickableImage"
+import jpSketchesLocales from "../../locales/jp/sketches.json"
 import imageOne from "../images/placeholders/1.85x1placeholder.png"
 import imageTwo from "../images/placeholders/1x1placeholder.png"
 import imageThree from "../images/placeholders/2x1placeholder.png"
@@ -46,6 +48,24 @@ const SketchesPage = () => {
 
 export default SketchesPage
 
-export const Head: HeadFC = () => (
-  <SEO pathname="/sketches" keywords="sketches, sketch book" />
-)
+export const Head: HeadFC = () => {
+  const t = useTranslation(jpSketchesLocales)
+
+  return <SEO pathname="/sketches" keywords={t("sketches, sketch book")} />
+}
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(
+      filter: { language: { eq: $language }, ns: { eq: "common" } }
+    ) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`

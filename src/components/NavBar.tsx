@@ -1,42 +1,49 @@
 import React, { useState, useEffect } from "react"
+import { useI18next } from "gatsby-plugin-react-i18next"
+import NavIconBar from "../components/NavIconBar"
 import {
   StyledDiv,
   StyledWebsiteTitleBar,
   StyledWebsiteTitle,
+  StyledIconBarContainer,
   StyledPagesBar,
   StyledLink,
   StyledMenuIconContainer,
+  StyledImg,
   StyledMobileWebsiteTitle,
   StyledMobileLinksContainer,
   StyledMobileLink,
+  StyledMobileIconBarContainer,
 } from "./styles/NavBar.styled"
 import menuIcon from "../images/hambmenu120.png"
 import closeIcon from "../images/xicon120.png"
 
 const pages = [
   {
-    title: "STORY",
+    title: "Story",
     route: "/",
   },
   {
-    title: "SKETCHES",
+    title: "Sketches",
     route: "/sketches",
   },
   {
-    title: "PERSONAL",
+    title: "Personal",
     route: "/personal",
   },
   {
-    title: "ABOUT",
+    title: "About",
     route: "/about",
   },
 ]
 
-const websiteTitle = "MIKA OKABE"
+const websiteTitle = "Mika Okabe"
 
 const NavBar = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false)
   const [scrollPosition, setScrollPosition] = useState<number>(0)
+
+  const { t, language } = useI18next()
 
   useEffect(() => {
     const handleResize = () => {
@@ -69,32 +76,40 @@ const NavBar = () => {
   return (
     <StyledDiv showMenu={showMenu}>
       <StyledWebsiteTitleBar>
-        <StyledWebsiteTitle>{websiteTitle}</StyledWebsiteTitle>
+        <StyledWebsiteTitle>{t(websiteTitle).toUpperCase()}</StyledWebsiteTitle>
+        <StyledIconBarContainer>
+          <NavIconBar iconWidth={40} iconHeight={40} iconSpacing={15} />
+        </StyledIconBarContainer>
       </StyledWebsiteTitleBar>
       <StyledPagesBar>
         {pages.map((page) => (
-          <StyledLink key={page.route} to={page.route}>
-            {page.title}
+          <StyledLink key={page.route} to={page.route} language={language}>
+            {t(page.title).toUpperCase()}
           </StyledLink>
         ))}
         <StyledMenuIconContainer>
-          <img
+          <StyledImg
             src={showMenu ? closeIcon : menuIcon}
-            width={40}
-            height={40}
             onClick={() => {
               setShowMenu((curr) => !curr)
             }}
           />
         </StyledMenuIconContainer>
-        <StyledMobileWebsiteTitle>{websiteTitle}</StyledMobileWebsiteTitle>
+        <StyledMobileWebsiteTitle>{t(websiteTitle)}</StyledMobileWebsiteTitle>
       </StyledPagesBar>
       <StyledMobileLinksContainer showMenu={showMenu}>
         {pages.map((page) => (
-          <StyledMobileLink key={page.route} to={page.route}>
-            {page.title}
+          <StyledMobileLink
+            key={page.route}
+            to={page.route}
+            language={language}
+          >
+            {t(page.title).toUpperCase()}
           </StyledMobileLink>
         ))}
+        <StyledMobileIconBarContainer>
+          <NavIconBar iconWidth={30} iconHeight={30} iconSpacing={10} />
+        </StyledMobileIconBarContainer>
       </StyledMobileLinksContainer>
     </StyledDiv>
   )

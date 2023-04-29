@@ -6,15 +6,15 @@ import {
 } from "./styles/MasonryLayout.styled"
 
 interface MasonryLayoutProps {
-  children: React.ReactNode
   columnWidth: number
   spacing: number
+  children: React.ReactNode
 }
 
 const MasonryLayout = ({
-  children,
   columnWidth,
   spacing,
+  children,
 }: MasonryLayoutProps) => {
   const [numColumns, setNumColumns] = useState<number>(0)
   const [columns, setColumns] = useState<React.ReactNode[][]>([[]])
@@ -26,9 +26,9 @@ const MasonryLayout = ({
     if (!container) return
     const containerWidth = container.clientWidth
     const newNumColumns = Math.floor(containerWidth / (columnWidth + spacing))
-    containerWidth / (newNumColumns * (columnWidth + spacing) + spacing) >= 1
-      ? setNumColumns(newNumColumns)
-      : setNumColumns(newNumColumns - 1)
+    containerWidth - (newNumColumns * (columnWidth + spacing)) >= columnWidth
+      ? setNumColumns(newNumColumns + 1)
+      : setNumColumns(newNumColumns)
   }
 
   useEffect(() => {
