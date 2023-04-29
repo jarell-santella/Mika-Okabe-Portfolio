@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { Close } from "@mui/icons-material"
+import { CloseRounded } from "@mui/icons-material"
 
 export const StyledImg = styled.img<{
   width?: string
@@ -48,6 +48,13 @@ export const StyledBackground = styled.div<{ showModal: boolean }>`
 
   /* Animation and transition properties */
   transition: visibility 0.2s, opacity 0.2s ease-in-out;
+
+  /* Selectors */
+  & svg {
+    /* Box model properties */
+    width: 25px;
+    height: 25px;
+  }
 `
 
 export const StyledImgModal = styled.img<{ widthLongest: boolean }>`
@@ -56,10 +63,8 @@ export const StyledImgModal = styled.img<{ widthLongest: boolean }>`
   height: ${(props) => (props.widthLongest ? "auto" : "80%")};
 `
 
-export const StyledCloseIcon = styled(Close)`
+export const StyledCloseIcon = styled(CloseRounded)`
   /* Box model properties */
-  width: 20px;
-  height: 20px;
   margin: 10px;
 
   /* Positional properties */
@@ -76,7 +81,6 @@ export const StyledCloseIcon = styled(Close)`
   /* User interface properties */
   cursor: pointer;
 
-  /* Selectors */
   &:hover {
     /* Visibility properties */
     opacity: 0.9;
