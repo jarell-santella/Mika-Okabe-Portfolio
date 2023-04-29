@@ -1,5 +1,8 @@
 import * as React from "react"
 import { useSiteMetadata } from "../hooks/useSiteMetadata"
+import { useLanguage } from "../hooks/useLanguage"
+import { useTranslation } from "../hooks/useTranslation"
+import jpCommonLocales from "../../locales/jp/common.json"
 
 interface SEOProps {
   title?: string
@@ -9,7 +12,16 @@ interface SEOProps {
   children?: React.ReactNode
 }
 
-export const SEO = ({ title, description, pathname, keywords, children }: SEOProps) => {
+export const SEO = ({
+  title,
+  description,
+  pathname,
+  keywords,
+  children,
+}: SEOProps) => {
+  const language = useLanguage()
+  const t = useTranslation(jpCommonLocales)
+
   const {
     title: defaultTitle,
     description: defaultDescription,
@@ -18,22 +30,26 @@ export const SEO = ({ title, description, pathname, keywords, children }: SEOPro
     type,
     siteUrl,
     keywords: defaultKeywords,
+    locales,
     openGraphImage,
     twitterImage,
     twitterUsername,
   } = useSiteMetadata()
 
+  const defaultTransKeywords = t(defaultKeywords.replace(/\s+/g, " "))
+
   const seo = {
-    title: title || defaultTitle,
-    description: (description || defaultDescription).replace(/\s+/g, " "),
-    author: author,
+    title: t(title || defaultTitle),
+    description: t((description || defaultDescription).replace(/\s+/g, " ")),
+    author: t(author),
     creator: creator,
     type,
     url: `${siteUrl}${pathname || ``}`,
-    keywords: (keywords
-      ? `${defaultKeywords}, ${keywords}`
-      : defaultKeywords
-    ).replace(/\s+/g, " "),
+    keywords: keywords
+      ? `${defaultTransKeywords}, ${keywords}`
+      : defaultTransKeywords,
+    locale: language === "en" ? locales[0] : locales[1],
+    localeAlternative: language === "en" ? locales[1] : locales[0],
     openGraphImage: `${siteUrl}${openGraphImage}`,
     twitterImage: `${siteUrl}${twitterImage}`,
     twitterUsername,
@@ -52,6 +68,8 @@ export const SEO = ({ title, description, pathname, keywords, children }: SEOPro
       <meta property="og:type" content={seo.type} />
       <meta property="og:url" content={seo.url} />
       <meta property="og:image" content={seo.openGraphImage} />
+      <meta property="og:locale" content={seo.locale} />
+      <meta property="og:locale:alternative" content={seo.localeAlternative} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={seo.title} />
       <meta name="twitter:description" content={seo.description} />
