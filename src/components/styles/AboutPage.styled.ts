@@ -1,5 +1,10 @@
 import styled from "styled-components"
-import { EmailOutlined, Instagram } from "@mui/icons-material"
+import {
+  EmailOutlined,
+  Instagram,
+  LinkedIn,
+  YouTube,
+} from "@mui/icons-material"
 
 export const StyledLayoutGrid = styled.div`
   /* Box model properties */
@@ -61,18 +66,29 @@ export const StyledLinksGrid = styled.div`
 
   /* Layout properties */
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto auto auto auto;
   grid-gap: 20px;
   grid-column: 1 / -1;
   align-items: center;
 
   /* Media queries */
+  @media only screen and (max-width: 800px) {
+    /* Layout properties */
+    grid-template-columns: auto auto;
+  }
+
   @media only screen and (max-width: 420px) {
     /* Layout properties */
     grid-template-columns: auto;
   }
 
   @media only screen and (max-width: 240px) {
+    /* Layout properties */
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+  }
+
+  @media only screen and (max-width: 200px) {
     /* Layout properties */
     grid-template-columns: auto auto;
   }
@@ -90,12 +106,12 @@ export const StyledLink = styled.a`
   /* Selectors */
   &:hover {
     /* Color properties */
-    color: #9090FF;
+    color: #9090ff;
   }
 
   &:active {
     /* Color properties */
-    color: #CCCCFF;
+    color: #ccccff;
   }
 `
 
@@ -105,6 +121,12 @@ export const StyledEmailIcon = styled(EmailOutlined)`
 
   /* Layout properties */
   vertical-align: -25%;
+
+  /* Media queries */
+  @media only screen and (max-width: 240px) {
+    /* Box model properties */
+    margin: 0px;
+  }
 `
 
 export const StyledInstagramIcon = styled(Instagram)`
@@ -113,6 +135,40 @@ export const StyledInstagramIcon = styled(Instagram)`
 
   /* Layout properties */
   vertical-align: -25%;
+
+  /* Media queries */
+  @media only screen and (max-width: 240px) {
+    /* Box model properties */
+    margin: 0px;
+  }
+`
+
+export const StyledLinkedInIcon = styled(LinkedIn)`
+  /* Box model properties */
+  margin-right: 10px;
+
+  /* Layout properties */
+  vertical-align: -25%;
+
+  /* Media queries */
+  @media only screen and (max-width: 240px) {
+    /* Box model properties */
+    margin: 0px;
+  }
+`
+
+export const StyledYouTubeIcon = styled(YouTube)`
+  /* Box model properties */
+  margin-right: 10px;
+
+  /* Layout properties */
+  vertical-align: -25%;
+
+  /* Media queries */
+  @media only screen and (max-width: 240px) {
+    /* Box model properties */
+    margin: 0px;
+  }
 `
 
 export const StyledSpan = styled.span`
