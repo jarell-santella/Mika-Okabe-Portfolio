@@ -95,7 +95,9 @@ const NavBar = () => {
             }}
           />
         </StyledMenuIconContainer>
-        <StyledMobileWebsiteTitle>{t(websiteTitle)}</StyledMobileWebsiteTitle>
+        <StyledMobileWebsiteTitle>
+          {t(websiteTitle).toUpperCase()}
+        </StyledMobileWebsiteTitle>
       </StyledPagesBar>
       <StyledMobileLinksContainer showMenu={showMenu}>
         {pages.map((page) => (
