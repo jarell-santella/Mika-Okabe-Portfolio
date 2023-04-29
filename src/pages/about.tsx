@@ -11,12 +11,14 @@ import {
   StyledParagraph,
   StyledLinksGrid,
   StyledLink,
-  StyledEmailIcon,
-  StyledInstagramIcon,
-  StyledLinkedInIcon,
-  StyledYouTubeIcon,
   StyledSpan,
 } from "../components/styles/AboutPage.styled"
+import {
+  EmailOutlined,
+  Instagram,
+  LinkedIn,
+  YouTube,
+} from "@mui/icons-material"
 import jpAboutLocales from "../../locales/jp/about.json"
 import bioIcon from "../images/placeholders/1x1placeholder.png"
 
@@ -32,18 +34,18 @@ const AboutPage = () => {
         </StyledParagraph>
         <StyledLinksGrid>
           <StyledLink href="mailto:mikaokabe@gmail.com">
-            <StyledEmailIcon />
+            <EmailOutlined />
             <StyledSpan>mikaokabe@gmail.com</StyledSpan>
           </StyledLink>
           <StyledLink href="https://instagram.com/wishterias" target="_blank">
-            <StyledInstagramIcon />
+            <Instagram />
             <StyledSpan>@wishterias</StyledSpan>
           </StyledLink>
           <StyledLink
             href="https://www.linkedin.com/in/mikaokabe"
             target="_blank"
           >
-            <StyledLinkedInIcon />
+            <LinkedIn />
             <StyledSpan>
               <Trans>mikaokabe</Trans>
             </StyledSpan>
@@ -52,7 +54,7 @@ const AboutPage = () => {
             href="https://www.youtube.com/@wishterias"
             target="_blank"
           >
-            <StyledYouTubeIcon />
+            <YouTube />
             <StyledSpan>@wishterias</StyledSpan>
           </StyledLink>
         </StyledLinksGrid>

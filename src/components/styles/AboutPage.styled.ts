@@ -1,10 +1,4 @@
 import styled from "styled-components"
-import {
-  EmailOutlined,
-  Instagram,
-  LinkedIn,
-  YouTube,
-} from "@mui/icons-material"
 
 export const StyledLayoutGrid = styled.div`
   /* Box model properties */
@@ -113,61 +107,21 @@ export const StyledLink = styled.a`
     /* Color properties */
     color: #CCCCFF;
   }
-`
 
-export const StyledEmailIcon = styled(EmailOutlined)`
-  /* Box model properties */
-  margin-right: 10px;
-
-  /* Layout properties */
-  vertical-align: -25%;
-
-  /* Media queries */
-  @media only screen and (max-width: 240px) {
+  & svg {
     /* Box model properties */
-    margin: 0px;
-  }
-`
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
 
-export const StyledInstagramIcon = styled(Instagram)`
-  /* Box model properties */
-  margin-right: 10px;
+    /* Layout properties */
+    vertical-align: -25%;
 
-  /* Layout properties */
-  vertical-align: -25%;
-
-  /* Media queries */
-  @media only screen and (max-width: 240px) {
-    /* Box model properties */
-    margin: 0px;
-  }
-`
-
-export const StyledLinkedInIcon = styled(LinkedIn)`
-  /* Box model properties */
-  margin-right: 10px;
-
-  /* Layout properties */
-  vertical-align: -25%;
-
-  /* Media queries */
-  @media only screen and (max-width: 240px) {
-    /* Box model properties */
-    margin: 0px;
-  }
-`
-
-export const StyledYouTubeIcon = styled(YouTube)`
-  /* Box model properties */
-  margin-right: 10px;
-
-  /* Layout properties */
-  vertical-align: -25%;
-
-  /* Media queries */
-  @media only screen and (max-width: 240px) {
-    /* Box model properties */
-    margin: 0px;
+    /* Media queries */
+    @media only screen and (max-width: 240px) {
+      /* Box model properties */
+      margin: 0px;
+    }
   }
 `
 
