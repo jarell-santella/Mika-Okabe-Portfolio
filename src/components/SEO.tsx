@@ -36,7 +36,7 @@ export const SEO = ({
     twitterUsername,
   } = useSiteMetadata()
 
-  const defaultTransKeywords = t(defaultKeywords.replace(/\s+/g, " "))
+  const defaultTransKeywords = t(defaultKeywords.replace(/\s+/g, ""))
 
   const seo = {
     title: t(title || defaultTitle),
@@ -46,7 +46,7 @@ export const SEO = ({
     type,
     url: `${siteUrl}${pathname || ``}`,
     keywords: keywords
-      ? `${defaultTransKeywords}, ${keywords}`
+      ? `${defaultTransKeywords},${keywords}`
       : defaultTransKeywords,
     locale: language === "en" ? locales[0] : locales[1],
     localeAlternative: language === "en" ? locales[1] : locales[0],

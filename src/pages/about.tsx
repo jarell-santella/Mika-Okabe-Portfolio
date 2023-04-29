@@ -48,7 +48,7 @@ export default AboutPage
 export const Head: HeadFC = () => {
   const t = useTranslation(jpAboutLocales)
 
-  return <SEO pathname="/about" keywords={t("mika, okabe, mika okabe")} />
+  return <SEO pathname="/about" keywords={t("mika,okabe,mika okabe")} />
 }
 
 export const query = graphql`
