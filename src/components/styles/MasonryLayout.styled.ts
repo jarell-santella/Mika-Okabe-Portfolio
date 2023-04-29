@@ -42,6 +42,7 @@ export const StyledMasonryColumn = styled.div<{
 
   /* Selectors */
   &:last-child {
+    /* Box model properties */
     margin-right: 0px;
   }
 `
