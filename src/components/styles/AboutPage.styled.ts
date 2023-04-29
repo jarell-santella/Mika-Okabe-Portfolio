@@ -106,12 +106,12 @@ export const StyledLink = styled.a`
   /* Selectors */
   &:hover {
     /* Color properties */
-    color: #9090ff;
+    color: #9090FF;
   }
 
   &:active {
     /* Color properties */
-    color: #ccccff;
+    color: #CCCCFF;
   }
 `
 
