@@ -13,6 +13,8 @@ import {
   StyledLink,
   StyledEmailIcon,
   StyledInstagramIcon,
+  StyledLinkedInIcon,
+  StyledYouTubeIcon,
   StyledSpan,
 } from "../components/styles/AboutPage.styled"
 import jpAboutLocales from "../../locales/jp/about.json"
@@ -35,6 +37,22 @@ const AboutPage = () => {
           </StyledLink>
           <StyledLink href="https://instagram.com/wishterias" target="_blank">
             <StyledInstagramIcon />
+            <StyledSpan>@wishterias</StyledSpan>
+          </StyledLink>
+          <StyledLink
+            href="https://www.linkedin.com/in/mikaokabe/"
+            target="_blank"
+          >
+            <StyledLinkedInIcon />
+            <StyledSpan>
+              <Trans>mikaokabe</Trans>
+            </StyledSpan>
+          </StyledLink>
+          <StyledLink
+            href="https://www.youtube.com/@wishterias"
+            target="_blank"
+          >
+            <StyledYouTubeIcon />
             <StyledSpan>@wishterias</StyledSpan>
           </StyledLink>
         </StyledLinksGrid>
