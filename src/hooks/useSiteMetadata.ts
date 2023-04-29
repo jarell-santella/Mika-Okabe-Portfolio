@@ -12,6 +12,7 @@ export const useSiteMetadata = () => {
           type
           siteUrl
           keywords
+          locales
           openGraphImage
           twitterImage
           twitterUsername
