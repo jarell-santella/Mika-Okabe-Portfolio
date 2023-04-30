@@ -99,9 +99,9 @@ const NavBar = () => {
         ))}
         <StyledMenuIconContainer>
           {showMenu ? (
-            <MenuRounded onClick={() => setShowMenu(false)} />
+            <CloseRounded onClick={() => setShowMenu(false)} />
           ) : (
-            <CloseRounded onClick={() => setShowMenu(true)} />
+            <MenuRounded onClick={() => setShowMenu(true)} />
           )}
         </StyledMenuIconContainer>
         <StyledMobileWebsiteTitle>
