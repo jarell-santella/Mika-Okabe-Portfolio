@@ -31,12 +31,12 @@ export const StyledLink = styled.a`
   /* Selectors */
   &:hover {
     /* Color properties */
-    color: #9090FF;
+    color: #9090ff;
   }
 
   &:active {
     /* Color properties */
-    color: #CCCCFF;
+    color: #ccccff;
   }
 `
 
@@ -50,11 +50,11 @@ export const StyledLanguageLink = styled(Link)`
   /* Selectors */
   &:hover {
     /* Color properties */
-    color: #9090FF;
+    color: #9090ff;
   }
 
   &:active {
     /* Color properties */
-    color: #CCCCFF;
+    color: #ccccff;
   }
 `
