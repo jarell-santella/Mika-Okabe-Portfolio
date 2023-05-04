@@ -27,7 +27,8 @@ const ClickableImage = ({ src, alt, width, height }: ClickableImageProps) => {
   }, [showModal])
 
   const handleSettingWidthLongest = () => {
-    const image = imageRef.current!
+    if (!imageRef.current) return
+    const image = imageRef.current
     if (image.naturalWidth >= image.naturalHeight) {
       const scaleFactor = (window.innerWidth * 0.8) / image.naturalWidth
       image.naturalHeight * scaleFactor >= window.innerHeight * 0.8
