@@ -13,7 +13,12 @@ interface ClickableImageProps {
   height?: string
 }
 
-const ClickableImage = ({ src, alt, width, height }: ClickableImageProps) => {
+const ClickableImage = ({
+  src,
+  alt,
+  width,
+  height,
+}: ClickableImageProps): React.JSX.Element => {
   const [showModal, setShowModal] = useState<boolean>(false)
   const [showCursor, setShowCursor] = useState<boolean>(true)
   const [widthLongest, setWidthLongest] = useState<boolean>(true)

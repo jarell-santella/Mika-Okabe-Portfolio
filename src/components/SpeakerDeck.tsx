@@ -10,7 +10,7 @@ interface SpeakerDeckProps {
   src: string
 }
 
-const SpeakerDeck = ({ title, src }: SpeakerDeckProps) => {
+const SpeakerDeck = ({ title, src }: SpeakerDeckProps): React.JSX.Element => {
   return (
     <StyledDiv>
       <SpeakerDeckTitle>{title}</SpeakerDeckTitle>

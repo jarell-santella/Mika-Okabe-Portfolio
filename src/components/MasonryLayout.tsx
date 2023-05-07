@@ -15,7 +15,7 @@ const MasonryLayout = ({
   columnWidth,
   spacing,
   children,
-}: MasonryLayoutProps) => {
+}: MasonryLayoutProps): React.JSX.Element => {
   const [numColumns, setNumColumns] = useState<number>(0)
   const [columns, setColumns] = useState<React.ReactNode[][]>([[]])
 

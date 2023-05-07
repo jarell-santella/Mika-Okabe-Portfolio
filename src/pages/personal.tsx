@@ -28,7 +28,7 @@ const media = [
   imageNine,
 ]
 
-const PersonalPage = () => {
+const PersonalPage = (): React.JSX.Element => {
   return (
     <>
       <GlobalStyle />

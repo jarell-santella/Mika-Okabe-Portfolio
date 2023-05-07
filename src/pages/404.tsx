@@ -6,7 +6,7 @@ import { GlobalStyle } from "../components/styles/GlobalStyles.styled"
 import NavBar from "../components/NavBar"
 import { StyledText } from "../components/styles/404Page.styled"
 
-const NotFoundPage = () => {
+const NotFoundPage = (): React.JSX.Element => {
   const { language } = useI18next()
 
   useEffect(() => {
