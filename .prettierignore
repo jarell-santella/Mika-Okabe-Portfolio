@@ -1,0 +1,11 @@
+node_modules/
+.cache/
+public/
+src/gatsby-types.d.ts
+tsconfig.json
+
+# Temporary placeholders
+**/placeholders/
+
+# Miscellaneous
+.DS_Store
