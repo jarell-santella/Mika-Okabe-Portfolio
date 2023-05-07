@@ -19,7 +19,7 @@ const speakerDecks = [
   },
 ]
 
-const IndexPage = () => {
+const IndexPage = (): React.JSX.Element => {
   const { t } = useI18next()
 
   return (

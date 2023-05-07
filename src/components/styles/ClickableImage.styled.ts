@@ -73,7 +73,7 @@ export const StyledCloseIcon = styled(CloseRounded)`
   right: 0;
 
   /* Color properties */
-  color: #FFFFFF;
+  color: #ffffff;
 
   /* Visibility properties */
   opacity: 0.75;

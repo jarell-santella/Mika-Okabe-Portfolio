@@ -22,7 +22,7 @@ import {
 import jpAboutLocales from "../../locales/jp/about.json"
 import bioIcon from "../images/placeholders/1x1placeholder.png"
 
-const AboutPage = () => {
+const AboutPage = (): React.JSX.Element => {
   return (
     <>
       <GlobalStyle />

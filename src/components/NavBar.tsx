@@ -37,7 +37,7 @@ const pages = [
 
 const websiteTitle = "Mika Okabe"
 
-const NavBar = () => {
+const NavBar = (): React.JSX.Element => {
   const [showMenu, setShowMenu] = useState<boolean>(false)
   const [scrollPosition, setScrollPosition] = useState<number>(0)
   const [iconSize, setIconSize] = useState<number>(20)

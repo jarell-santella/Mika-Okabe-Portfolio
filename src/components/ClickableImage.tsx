@@ -13,7 +13,12 @@ interface ClickableImageProps {
   height?: string
 }
 
-const ClickableImage = ({ src, alt, width, height }: ClickableImageProps) => {
+const ClickableImage = ({
+  src,
+  alt,
+  width,
+  height,
+}: ClickableImageProps): React.JSX.Element => {
   const [showModal, setShowModal] = useState<boolean>(false)
   const [showCursor, setShowCursor] = useState<boolean>(true)
   const [widthLongest, setWidthLongest] = useState<boolean>(true)
@@ -27,7 +32,8 @@ const ClickableImage = ({ src, alt, width, height }: ClickableImageProps) => {
   }, [showModal])
 
   const handleSettingWidthLongest = () => {
-    const image = imageRef.current!
+    if (!imageRef.current) return
+    const image = imageRef.current
     if (image.naturalWidth >= image.naturalHeight) {
       const scaleFactor = (window.innerWidth * 0.8) / image.naturalWidth
       image.naturalHeight * scaleFactor >= window.innerHeight * 0.8

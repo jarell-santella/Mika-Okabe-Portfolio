@@ -23,7 +23,7 @@ const NavIconBar = ({
   iconWidth,
   iconHeight,
   iconSpacing,
-}: NavIconBarProps) => {
+}: NavIconBarProps): React.JSX.Element => {
   const { language, defaultLanguage, originalPath } = useI18next()
 
   return (

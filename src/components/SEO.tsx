@@ -18,7 +18,7 @@ export const SEO = ({
   pathname,
   keywords,
   children,
-}: SEOProps) => {
+}: SEOProps): React.JSX.Element => {
   const language = useLanguage()
   const t = useTranslation(jpCommonLocales)
 

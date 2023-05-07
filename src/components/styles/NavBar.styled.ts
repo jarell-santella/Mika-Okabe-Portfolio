@@ -14,7 +14,7 @@ export const StyledDiv = styled.div<{ showMenu: boolean }>`
   z-index: 1;
 
   /* Color properties */
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 
   /* Selectors */
   & ~ * {
@@ -99,12 +99,12 @@ export const StyledLink = styled(Link)`
   /* Selectors */
   &:hover {
     /* Color properties */
-    color: #9090FF;
+    color: #9090ff;
   }
 
   &:active {
     /* Color properties */
-    color: #CCCCFF;
+    color: #ccccff;
   }
 
   /* Media queries */
@@ -136,12 +136,12 @@ export const StyledMenuIconContainer = styled.div`
     /* Selectors */
     &:hover {
       /* Color properties */
-      color: #9090FF;
+      color: #9090ff;
     }
 
     &:active {
       /* Color properties */
-      color: #CCCCFF;
+      color: #ccccff;
     }
 
     /* Media queries */
@@ -221,7 +221,7 @@ export const StyledMobileLinksContainer = styled.div<{ showMenu: boolean }>`
   position: absolute;
 
   /* Color properties */
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 
   /* Visibility properties */
   visibility: ${(props) => (props.showMenu ? "visible" : "hidden")};
@@ -254,12 +254,12 @@ export const StyledMobileLink = styled(Link)`
   /* Selectors */
   &:hover {
     /* Color properties */
-    color: #9090FF;
+    color: #9090ff;
   }
 
   &:active {
     /* Color properties */
-    color: #CCCCFF;
+    color: #ccccff;
   }
 
   /* Media queries */

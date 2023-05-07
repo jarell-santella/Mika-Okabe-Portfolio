@@ -30,7 +30,7 @@ const images = [
   imageNine,
 ]
 
-const SketchesPage = () => {
+const SketchesPage = (): React.JSX.Element => {
   return (
     <>
       <GlobalStyle />
