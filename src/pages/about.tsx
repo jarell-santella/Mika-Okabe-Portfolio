@@ -1,7 +1,8 @@
 import * as React from "react"
 import { graphql, HeadFC } from "gatsby"
 import { Trans } from "gatsby-plugin-react-i18next"
-import { useTranslation } from "../hooks/useTranslation"
+import { useLanguage } from "../hooks/useLanguage"
+import { getTranslation } from "../utils/translationHelpers"
 import { SEO } from "../components/SEO"
 import { GlobalStyle } from "../components/styles/GlobalStyles.styled"
 import NavBar from "../components/NavBar"
@@ -19,6 +20,7 @@ import {
   LinkedIn,
   YouTube,
 } from "@mui/icons-material"
+import enAboutLocales from "../../locales/en/about.json"
 import jpAboutLocales from "../../locales/jp/about.json"
 import bioIcon from "../images/placeholders/1x1placeholder.png"
 
@@ -66,7 +68,10 @@ const AboutPage = (): React.JSX.Element => {
 export default AboutPage
 
 export const Head: HeadFC = () => {
-  const t = useTranslation(jpAboutLocales)
+  const language = useLanguage(
+    typeof window !== "undefined" ? window.location.href : undefined
+  )
+  const t = getTranslation(language === "en" ? enAboutLocales : jpAboutLocales)
 
   return <SEO pathname="/about" keywords={t("mika,okabe,mika okabe")} />
 }

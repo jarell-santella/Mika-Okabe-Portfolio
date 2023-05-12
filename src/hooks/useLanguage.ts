@@ -10,7 +10,7 @@ interface SiteData {
   }
 }
 
-export const useLanguage = (): string => {
+export const useLanguage = (hrefCurrent: string | undefined): string => {
   const data = useStaticQuery<SiteData>(
     graphql`
       query {
@@ -24,8 +24,7 @@ export const useLanguage = (): string => {
   )
 
   const { siteUrl } = data.site.siteMetadata
-  const currentUrl =
-    typeof window !== "undefined" ? window.location.href : siteUrl
+  const currentUrl = typeof hrefCurrent !== "undefined" ? hrefCurrent : siteUrl
 
   const regex = new RegExp(`^${siteUrl}/jp/.*$`, "gi")
   const httpsCurrentUrl = currentUrl.replace(/^http:\/\//, "https://")
