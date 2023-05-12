@@ -1,7 +1,8 @@
 import * as React from "react"
 import { useSiteMetadata } from "../hooks/useSiteMetadata"
 import { useLanguage } from "../hooks/useLanguage"
-import { useTranslation } from "../hooks/useTranslation"
+import { getTranslation } from "../utils/translationHelpers"
+import enCommonLocales from "../../locales/en/common.json"
 import jpCommonLocales from "../../locales/jp/common.json"
 
 interface SEOProps {
@@ -19,8 +20,12 @@ export const SEO = ({
   keywords,
   children,
 }: SEOProps): React.JSX.Element => {
-  const language = useLanguage()
-  const t = useTranslation(jpCommonLocales)
+  const language = useLanguage(
+    typeof window !== "undefined" ? window.location.href : undefined
+  )
+  const t = getTranslation(
+    language === "en" ? enCommonLocales : jpCommonLocales
+  )
 
   const {
     title: defaultTitle,

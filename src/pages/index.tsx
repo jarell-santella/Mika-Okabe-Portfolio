@@ -1,11 +1,13 @@
 import * as React from "react"
 import { graphql, HeadFC } from "gatsby"
 import { useI18next } from "gatsby-plugin-react-i18next"
-import { useTranslation } from "../hooks/useTranslation"
+import { useLanguage } from "../hooks/useLanguage"
+import { getTranslation } from "../utils/translationHelpers"
 import { SEO } from "../components/SEO"
 import { GlobalStyle } from "../components/styles/GlobalStyles.styled"
 import NavBar from "../components/NavBar"
 import SpeakerDeck from "../components/SpeakerDeck"
+import enIndexLocales from "../../locales/en/index.json"
 import jpIndexLocales from "../../locales/jp/index.json"
 
 const speakerDecks = [
@@ -40,7 +42,10 @@ const IndexPage = (): React.JSX.Element => {
 export default IndexPage
 
 export const Head: HeadFC = () => {
-  const t = useTranslation(jpIndexLocales)
+  const language = useLanguage(
+    typeof window !== "undefined" ? window.location.href : undefined
+  )
+  const t = getTranslation(language === "en" ? enIndexLocales : jpIndexLocales)
 
   return <SEO keywords={t("speakerdeck")} />
 }

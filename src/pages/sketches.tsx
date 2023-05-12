@@ -1,12 +1,14 @@
 import * as React from "react"
 import { graphql, HeadFC } from "gatsby"
-import { useTranslation } from "../hooks/useTranslation"
+import { useLanguage } from "../hooks/useLanguage"
+import { getTranslation } from "../utils/translationHelpers"
 import { SEO } from "../components/SEO"
 import { GlobalStyle } from "../components/styles/GlobalStyles.styled"
 import NavBar from "../components/NavBar"
 import { StyledSketchesContainer } from "../components/styles/SketchesPage.styled"
 import MasonryLayout from "../components/MasonryLayout"
 import ClickableImage from "../components/ClickableImage"
+import enSketchesLocales from "../../locales/en/sketches.json"
 import jpSketchesLocales from "../../locales/jp/sketches.json"
 import imageOne from "../images/placeholders/1.85x1placeholder.png"
 import imageTwo from "../images/placeholders/1x1placeholder.png"
@@ -49,7 +51,12 @@ const SketchesPage = (): React.JSX.Element => {
 export default SketchesPage
 
 export const Head: HeadFC = () => {
-  const t = useTranslation(jpSketchesLocales)
+  const language = useLanguage(
+    typeof window !== "undefined" ? window.location.href : undefined
+  )
+  const t = getTranslation(
+    language === "en" ? enSketchesLocales : jpSketchesLocales
+  )
 
   return <SEO pathname="/sketches" keywords={t("sketches,sketch book")} />
 }
