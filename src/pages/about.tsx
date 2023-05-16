@@ -22,7 +22,7 @@ import {
 } from "@mui/icons-material"
 import enAboutLocales from "../../locales/en/about.json"
 import jpAboutLocales from "../../locales/jp/about.json"
-import bioIcon from "../images/placeholders/1x1placeholder.png"
+import bioPicture from "../images/bio_picture.png"
 
 const AboutPage = (): React.JSX.Element => {
   return (
@@ -30,7 +30,7 @@ const AboutPage = (): React.JSX.Element => {
       <GlobalStyle />
       <NavBar />
       <StyledLayoutGrid>
-        <StyledImg src={bioIcon} alt="Image representation of Mika" />
+        <StyledImg src={bioPicture} alt="Image representation of Mika" />
         <StyledParagraph>
           <Trans>bio_text</Trans>
         </StyledParagraph>
