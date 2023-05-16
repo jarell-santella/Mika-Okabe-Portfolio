@@ -6,27 +6,11 @@ import NavBar from "../components/NavBar"
 import { StyledMediaContainer } from "../components/styles/PersonalPage.styled"
 import MasonryLayout from "../components/MasonryLayout"
 import ClickableImage from "../components/ClickableImage"
-import imageOne from "../images/placeholders/16x10placeholder.png"
-import imageTwo from "../images/placeholders/14x10placeholder.png"
-import imageThree from "../images/placeholders/4x3placeholder.png"
-import imageFour from "../images/placeholders/16x9placeholder.png"
-import imageFive from "../images/placeholders/1.85x1placeholder.png"
-import imageSix from "../images/placeholders/3x2placeholder.png"
-import imageSeven from "../images/placeholders/2x1placeholder.png"
-import imageEight from "../images/placeholders/1x1placeholder.png"
-import imageNine from "../images/placeholders/5x4placeholder.png"
+import personal1 from "../images/personal1.png"
+import personal2 from "../images/personal2.png"
+import personal3 from "../images/personal3.png"
 
-const media = [
-  imageOne,
-  imageTwo,
-  imageThree,
-  imageFour,
-  imageFive,
-  imageSix,
-  imageSeven,
-  imageEight,
-  imageNine,
-]
+const media = [personal1, personal2, personal3]
 
 const PersonalPage = (): React.JSX.Element => {
   return (
@@ -35,6 +19,13 @@ const PersonalPage = (): React.JSX.Element => {
       <NavBar />
       <StyledMediaContainer>
         <MasonryLayout columnWidth={400} spacing={15}>
+          <video controls controlsList="nodownload">
+            <source
+              // src={`${ascendFilm}#t=0.001`}
+              src={"https://assets.mikaokabe.com/ascend-film.mp4#t=0.001"}
+              type="video/mp4"
+            />
+          </video>
           {media.map((media, index) => (
             <ClickableImage
               key={index}
