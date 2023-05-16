@@ -10,27 +10,13 @@ import MasonryLayout from "../components/MasonryLayout"
 import ClickableImage from "../components/ClickableImage"
 import enSketchesLocales from "../../locales/en/sketches.json"
 import jpSketchesLocales from "../../locales/jp/sketches.json"
-import imageOne from "../images/placeholders/1.85x1placeholder.png"
-import imageTwo from "../images/placeholders/1x1placeholder.png"
-import imageThree from "../images/placeholders/2x1placeholder.png"
-import imageFour from "../images/placeholders/3x2placeholder.png"
-import imageFive from "../images/placeholders/4x3placeholder.png"
-import imageSix from "../images/placeholders/5x4placeholder.png"
-import imageSeven from "../images/placeholders/14x10placeholder.png"
-import imageEight from "../images/placeholders/16x9placeholder.png"
-import imageNine from "../images/placeholders/16x10placeholder.png"
+import sketches1 from "../images/sketches1.jpg"
+import sketches2 from "../images/sketches2.jpg"
+import sketches3 from "../images/sketches3.jpg"
+import sketches4 from "../images/sketches4.jpg"
+import sketches5 from "../images/sketches5.jpg"
 
-const images = [
-  imageOne,
-  imageTwo,
-  imageThree,
-  imageFour,
-  imageFive,
-  imageSix,
-  imageSeven,
-  imageEight,
-  imageNine,
-]
+const images = [sketches1, sketches2, sketches3, sketches4, sketches5]
 
 const SketchesPage = (): React.JSX.Element => {
   return (
