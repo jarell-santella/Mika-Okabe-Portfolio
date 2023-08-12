@@ -6,23 +6,23 @@ jest.spyOn(Gatsby, "useStaticQuery").mockReturnValue({
 })
 
 describe(useLanguage, () => {
-  it("English HTTP URL", () => {
+  it("Returns English with English HTTP URL", () => {
     expect(useLanguage("http://example.com")).toBe("en")
   })
 
-  it("English HTTPS URL", () => {
+  it("Returns English with English HTTPS URL", () => {
     expect(useLanguage("https://example.com")).toBe("en")
   })
 
-  it("Japanese HTTP URL", () => {
+  it("Returns Japanese with Japanese HTTP URL", () => {
     expect(useLanguage("http://example.com/jp/")).toBe("jp")
   })
 
-  it("Japanese HTTPS URL", () => {
+  it("Returns Japanese with Japanese HTTPS URL", () => {
     expect(useLanguage("https://example.com/jp/")).toBe("jp")
   })
 
-  it("undefined URL", () => {
+  it("Returns English with undefined URL", () => {
     expect(useLanguage(undefined)).toBe("en")
   })
 })

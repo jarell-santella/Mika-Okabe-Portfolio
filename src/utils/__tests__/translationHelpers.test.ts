@@ -10,47 +10,47 @@ jest.mock("../../../locales/jp/common.json", () => ({
 }))
 
 describe(getTranslatedText, () => {
-  it("Valid English translation key", () => {
+  it("Translates key to English", () => {
     expect(getTranslatedText("hello world", enCommonLocales)).toBe(
       "hello world in english"
     )
   })
 
-  it("Valid Japanese translation key", () => {
+  it("Translates key to Japanese", () => {
     expect(getTranslatedText("hello world", jpCommonLocales)).toBe(
       "hello world in japanese"
     )
   })
 
-  it("Invalid translation key", () => {
+  it("Returns key if invalid", () => {
     expect(getTranslatedText("lorem ipsum", enCommonLocales)).toBe(
       "lorem ipsum"
     )
   })
 
-  it("Empty translation key", () => {
+  it("Returns key if empty", () => {
     expect(getTranslatedText("", enCommonLocales)).toBe("")
   })
 })
 
 describe(getTranslation, () => {
-  it("Valid English translation key", () => {
+  it("Translates key to English", () => {
     expect(getTranslation(enCommonLocales)("hello world")).toBe(
       "hello world in english"
     )
   })
 
-  it("Valid Japanese translation key", () => {
+  it("Translates key to Japanese", () => {
     expect(getTranslation(jpCommonLocales)("hello world")).toBe(
       "hello world in japanese"
     )
   })
 
-  it("Invalid translation key", () => {
+  it("Returns key if invalid", () => {
     expect(getTranslation(enCommonLocales)("lorem ipsum")).toBe("lorem ipsum")
   })
 
-  it("Empty translation key", () => {
+  it("Returns key if empty", () => {
     expect(getTranslation(enCommonLocales)("")).toBe("")
   })
 })

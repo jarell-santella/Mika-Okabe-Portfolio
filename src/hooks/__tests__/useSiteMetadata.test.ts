@@ -24,7 +24,7 @@ const returnValue = {
 jest.spyOn(Gatsby, "useStaticQuery").mockReturnValue(returnValue)
 
 describe(useSiteMetadata, () => {
-  it("Returns correct site metadata", () => {
+  it("Returns site metadata", () => {
     expect(useSiteMetadata()).toBe(metadata)
   })
 })
