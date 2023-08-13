@@ -41,7 +41,7 @@ const PersonalPage = (): React.JSX.Element => {
 
 export default PersonalPage
 
-export const Head: HeadFC = () => <SEO pathname="/personal" />
+export const Head: HeadFC = () => <SEO title="Personal" pathname="/personal" />
 
 export const query = graphql`
   query ($language: String!) {

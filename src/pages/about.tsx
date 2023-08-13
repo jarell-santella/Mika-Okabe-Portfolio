@@ -73,7 +73,13 @@ export const Head: HeadFC = () => {
   )
   const t = getTranslation(language === "en" ? enAboutLocales : jpAboutLocales)
 
-  return <SEO pathname="/about" keywords={t("mika,okabe,mika okabe")} />
+  return (
+    <SEO
+      title="About"
+      pathname="/about"
+      keywords={t("mika,okabe,mika okabe")}
+    />
+  )
 }
 
 export const query = graphql`

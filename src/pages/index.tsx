@@ -1,6 +1,7 @@
 import * as React from "react"
 import { graphql, HeadFC } from "gatsby"
 import { useI18next } from "gatsby-plugin-react-i18next"
+import { useSiteMetadata } from "../hooks/useSiteMetadata"
 import { useLanguage } from "../hooks/useLanguage"
 import { getTranslation } from "../utils/translationHelpers"
 import { SEO } from "../components/SEO"
@@ -42,12 +43,25 @@ const IndexPage = (): React.JSX.Element => {
 export default IndexPage
 
 export const Head: HeadFC = () => {
+  const { title, siteUrl } = useSiteMetadata()
+
   const language = useLanguage(
     typeof window !== "undefined" ? window.location.href : undefined
   )
   const t = getTranslation(language === "en" ? enIndexLocales : jpIndexLocales)
 
-  return <SEO keywords={t("speakerdeck")} />
+  return (
+    <SEO title="Story" keywords={t("speakerdeck")}>
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: title,
+          url: siteUrl,
+        })}
+      </script>
+    </SEO>
+  )
 }
 
 export const query = graphql`

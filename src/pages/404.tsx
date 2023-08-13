@@ -29,7 +29,9 @@ const NotFoundPage = (): React.JSX.Element => {
 
 export default NotFoundPage
 
-export const Head: HeadFC = () => <SEO pathname="/404.html" />
+export const Head: HeadFC = () => (
+  <SEO title="404 Not Found" pathname="/404.html" />
+)
 
 export const query = graphql`
   query ($language: String!) {
