@@ -43,8 +43,10 @@ export const SEO = ({
 
   const defaultTransKeywords = t(defaultKeywords.replace(/\s+/g, ""))
 
+  const fullTitle = title ? `${t(title)} | ${t(defaultTitle)}` : t(defaultTitle)
+
   const seo = {
-    title: t(title || defaultTitle),
+    title: fullTitle,
     description: t((description || defaultDescription).replace(/\s+/g, " ")),
     author: t(author),
     creator: creator,
@@ -68,6 +70,7 @@ export const SEO = ({
       <meta name="creator" content={seo.creator} />
       <meta name="keywords" content={seo.keywords} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta property="og:site_name" content={defaultTitle} />
       <meta property="og:title" content={seo.title} />
       <meta property="og:description" content={seo.description} />
       <meta property="og:type" content={seo.type} />
