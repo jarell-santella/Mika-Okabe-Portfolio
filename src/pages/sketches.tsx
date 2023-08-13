@@ -44,7 +44,13 @@ export const Head: HeadFC = () => {
     language === "en" ? enSketchesLocales : jpSketchesLocales
   )
 
-  return <SEO pathname="/sketches" keywords={t("sketches,sketch book")} />
+  return (
+    <SEO
+      title="Sketches"
+      pathname="/sketches"
+      keywords={t("sketches,sketch book")}
+    />
+  )
 }
 
 export const query = graphql`
