@@ -1,8 +1,8 @@
 import * as React from "react"
 import {
   StyledDiv,
-  SpeakerDeckTitle,
-  SpeakerDeckIFrame,
+  StyledTitle,
+  StyledIFrame,
 } from "./styles/SpeakerDeck.styled"
 
 interface SpeakerDeckProps {
@@ -13,8 +13,8 @@ interface SpeakerDeckProps {
 const SpeakerDeck = ({ title, src }: SpeakerDeckProps): React.JSX.Element => {
   return (
     <StyledDiv>
-      <SpeakerDeckTitle>{title}</SpeakerDeckTitle>
-      <SpeakerDeckIFrame src={src}></SpeakerDeckIFrame>
+      <StyledTitle>{title}</StyledTitle>
+      <StyledIFrame src={src}></StyledIFrame>
     </StyledDiv>
   )
 }

@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const StyledText = styled.p`
+export const StyledParagraph = styled.p`
   /* Box model properties */
   width: 90%;
   margin: 20px auto;

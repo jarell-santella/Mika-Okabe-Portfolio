@@ -89,6 +89,7 @@ export const StyledLink = styled(Link)`
   text-align: center;
 
   /* Typography properties */
+  font-weight: lighter;
   font-size: 25px;
   font-family: courier, courier new, serif;
   text-decoration: none;
@@ -244,6 +245,7 @@ export const StyledMobileLink = styled(Link)`
   text-align: center;
 
   /* Typography properties */
+  font-weight: lighter;
   font-size: 25px;
   font-family: courier, courier new, serif;
   text-decoration: none;
