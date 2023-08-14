@@ -32,7 +32,7 @@ const SketchesPage = (): React.JSX.Element => {
       <GlobalStyle />
       <NavBar />
       <StyledSketchesContainer>
-        <MasonryLayout columnWidth={300} spacing={10}>
+        <MasonryLayout columnWidth={400} spacing={10}>
           {images.map((image, index) => (
             <ClickableImage key={index} src={image} alt={`Sketch ${index}`} />
           ))}
