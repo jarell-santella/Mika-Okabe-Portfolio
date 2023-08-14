@@ -1,35 +1,58 @@
 import * as React from "react"
 import { graphql, HeadFC } from "gatsby"
+import { useI18next } from "gatsby-plugin-react-i18next"
 import { SEO } from "../components/SEO"
 import { GlobalStyle } from "../components/styles/GlobalStyles.styled"
 import NavBar from "../components/NavBar"
-import { StyledMediaContainer } from "../components/styles/PersonalPage.styled"
+import {
+  StyledMediaContainer,
+  StyledBreak,
+} from "../components/styles/PersonalPage.styled"
 import MasonryLayout from "../components/MasonryLayout"
+import VideoCard from "../components/VideoCard"
 import ClickableImage from "../components/ClickableImage"
 import personal1 from "../images/personal1.png"
 import personal2 from "../images/personal2.png"
 import personal3 from "../images/personal3.png"
 
-const media = [personal1, personal2, personal3]
+const videos = [
+  {
+    src: "https://assets.mikaokabe.com/ascend-film.mp4",
+    description:
+      "UCLA 2020 Thesis Film: Director, Storyboard Artist, Designer, Animator, and Editor.",
+  },
+  {
+    src: "https://assets.mikaokabe.com/storm-patrol-film-01.mp4",
+    description:
+      "Hawai'i Storm Patrol for the State of Hawaii Department of Transportation: Storyboard Artist, Background Artist, and Assets Creator.",
+  },
+]
+const images = [personal1, personal2, personal3]
 
 const PersonalPage = (): React.JSX.Element => {
+  const { t } = useI18next()
+
   return (
     <>
       <GlobalStyle />
       <NavBar />
       <StyledMediaContainer>
         <MasonryLayout columnWidth={400} spacing={15}>
-          <video controls controlsList="nodownload">
-            <source
-              // src={`${ascendFilm}#t=0.001`}
-              src={"https://assets.mikaokabe.com/ascend-film.mp4#t=0.001"}
-              type="video/mp4"
+          {videos.map((video, index) => (
+            <VideoCard
+              key={index}
+              src={video.src}
+              description={t(video.description)}
+              width="100%"
             />
-          </video>
-          {media.map((media, index) => (
+          ))}
+        </MasonryLayout>
+        <StyledBreak />
+        <MasonryLayout columnWidth={400} spacing={15}>
+          {images.map((image, index) => (
             <ClickableImage
               key={index}
-              src={media}
+              src={image}
               alt={`Personal media ${index}`}
             />
           ))}
@@ -46,7 +69,10 @@ export const Head: HeadFC = () => <SEO title="Personal" pathname="/personal" />
 export const query = graphql`
   query ($language: String!) {
     locales: allLocale(
-      filter: { language: { eq: $language }, ns: { eq: "common" } }
+      filter: {
+        language: { eq: $language }
+        ns: { in: ["common", "personal"] }
+      }
     ) {
       edges {
         node {
