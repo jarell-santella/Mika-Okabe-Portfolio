@@ -20,18 +20,22 @@ const pages = [
   {
     title: "Story",
     route: "/",
+    pathnames: new Set(["/", "/jp/"]),
   },
   {
     title: "Sketches",
     route: "/sketches",
+    pathnames: new Set(["/sketches/", "/jp/sketches/"]),
   },
   {
     title: "Personal",
     route: "/personal",
+    pathnames: new Set(["/personal/", "/jp/personal/"]),
   },
   {
     title: "About",
     route: "/about",
+    pathnames: new Set(["/about/", "/jp/about/"]),
   },
 ]
 
@@ -94,7 +98,12 @@ const NavBar = (): React.JSX.Element => {
       <StyledPagesBar>
         {pages.map((page) => (
           <StyledLink key={page.route} to={page.route} language={language}>
-            {t(page.title).toUpperCase()}
+            {typeof window !== "undefined" &&
+            page.pathnames.has(window.location.pathname) ? (
+              <b>{t(page.title).toUpperCase()}</b>
+            ) : (
+              t(page.title).toUpperCase()
+            )}
           </StyledLink>
         ))}
         <StyledMenuIconContainer>
@@ -115,7 +124,12 @@ const NavBar = (): React.JSX.Element => {
             to={page.route}
             language={language}
           >
-            {t(page.title).toUpperCase()}
+            {typeof window !== "undefined" &&
+            page.pathnames.has(window.location.pathname) ? (
+              <b>{t(page.title).toUpperCase()}</b>
+            ) : (
+              t(page.title).toUpperCase()
+            )}
           </StyledMobileLink>
         ))}
         <StyledMobileIconBarContainer>
