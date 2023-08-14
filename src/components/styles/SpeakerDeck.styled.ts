@@ -6,7 +6,7 @@ export const StyledDiv = styled.div`
   margin: 20px auto;
 `
 
-export const SpeakerDeckTitle = styled.h3`
+export const StyledTitle = styled.h3`
   /* Box model properties */
   margin: 0px auto 10px;
 
@@ -15,7 +15,7 @@ export const SpeakerDeckTitle = styled.h3`
   font-family: courier, courier new, serif;
 `
 
-export const SpeakerDeckIFrame = styled.iframe`
+export const StyledIFrame = styled.iframe`
   /* Box model properties */
   width: 100%;
   aspect-ratio: 16 / 9;

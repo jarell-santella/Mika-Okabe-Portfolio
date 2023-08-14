@@ -4,7 +4,7 @@ import { Trans, useI18next } from "gatsby-plugin-react-i18next"
 import { SEO } from "../components/SEO"
 import { GlobalStyle } from "../components/styles/GlobalStyles.styled"
 import NavBar from "../components/NavBar"
-import { StyledText } from "../components/styles/404Page.styled"
+import { StyledParagraph } from "../components/styles/404Page.styled"
 
 const NotFoundPage = (): React.JSX.Element => {
   const { language } = useI18next()
@@ -20,9 +20,9 @@ const NotFoundPage = (): React.JSX.Element => {
     <>
       <GlobalStyle />
       <NavBar />
-      <StyledText>
+      <StyledParagraph>
         <Trans>sorry_text</Trans>
-      </StyledText>
+      </StyledParagraph>
     </>
   )
 }
