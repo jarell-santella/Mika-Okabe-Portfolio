@@ -14,6 +14,8 @@ import ClickableImage from "../components/ClickableImage"
 import personal1 from "../images/personal1.png"
 import personal2 from "../images/personal2.png"
 import personal3 from "../images/personal3.png"
+import personal4 from "../images/personal4.png"
+import personal5 from "../images/personal5.png"
 
 const videos = [
   {
@@ -27,7 +29,7 @@ const videos = [
       "Hawai'i Storm Patrol for the State of Hawaii Department of Transportation: Storyboard Artist, Background Artist, and Assets Creator.",
   },
 ]
-const images = [personal1, personal2, personal3]
+const images = [personal1, personal2, personal3, personal4, personal5]
 
 const PersonalPage = (): React.JSX.Element => {
   const { t } = useI18next()
