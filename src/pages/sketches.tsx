@@ -11,6 +11,8 @@ import ClickableImage from "../components/ClickableImage"
 import enSketchesLocales from "../../locales/en/sketches.json"
 import jpSketchesLocales from "../../locales/jp/sketches.json"
 import sketchesZelda1 from "../images/sketches_zelda1.png"
+import sketchesHobie1 from "../images/sketches_hobie1.png"
+import sketchesHobie2 from "../images/sketches_hobie2.png"
 import sketches1 from "../images/sketches1.jpg"
 import sketches2 from "../images/sketches2.jpg"
 import sketches3 from "../images/sketches3.jpg"
@@ -19,6 +21,8 @@ import sketches5 from "../images/sketches5.jpg"
 
 const images = [
   sketchesZelda1,
+  sketchesHobie1,
+  sketchesHobie2,
   sketches1,
   sketches2,
   sketches3,

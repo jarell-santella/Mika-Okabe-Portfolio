@@ -4,6 +4,7 @@ import NavIconBar from "../components/NavIconBar"
 import {
   StyledDiv,
   StyledWebsiteTitleBar,
+  StyledWebsiteHeaderImage,
   StyledWebsiteTitle,
   StyledIconBarContainer,
   StyledPagesBar,
@@ -15,6 +16,7 @@ import {
   StyledMobileIconBarContainer,
 } from "./styles/NavBar.styled"
 import { MenuRounded, CloseRounded } from "@mui/icons-material"
+import headerImage from "../images/header_image.png"
 
 const pages = [
   {
@@ -89,6 +91,7 @@ const NavBar = (): React.JSX.Element => {
 
   return (
     <StyledDiv showMenu={showMenu}>
+      <StyledWebsiteHeaderImage src={headerImage} />
       <StyledWebsiteTitleBar>
         <StyledWebsiteTitle>{t(websiteTitle).toUpperCase()}</StyledWebsiteTitle>
         <StyledIconBarContainer>

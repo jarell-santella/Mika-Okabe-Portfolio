@@ -5,12 +5,12 @@ export const StyledDiv = styled.div<{ showMenu: boolean }>`
   /* Box model properties */
   width: 100%;
   max-width: 1230px;
-  max-height: 150px;
+  max-height: 320px;
   margin: 0px auto 20px auto;
 
   /* Positional properties */
   position: sticky;
-  top: -90px;
+  top: -260px;
   z-index: 1;
 
   /* Color properties */
@@ -24,16 +24,84 @@ export const StyledDiv = styled.div<{ showMenu: boolean }>`
   /* Media queries */
   @media only screen and (max-width: 800px) {
     /* Box model properties */
-    max-height: ${(props) => (props.showMenu ? "100vh" : "60px")};
+    max-height: ${(props) => (props.showMenu ? "100vh" : "140px")};
 
     /* Positional properties */
-    top: 0px;
+    top: -80px;
+  }
+
+  @media only screen and (max-width: 375px) {
+    /* Box model properties */
+    max-height: ${(props) => (props.showMenu ? "100vh" : "120px")};
+
+    /* Positional properties */
+    top: -60px;
+  }
+
+  @media only screen and (max-width: 310px) {
+    /* Box model properties */
+    max-height: ${(props) => (props.showMenu ? "100vh" : "100px")};
+
+    /* Positional properties */
+    top: -40px;
+  }
+
+  @media only screen and (max-width: 250px) {
+    /* Box model properties */
+    max-height: ${(props) => (props.showMenu ? "100vh" : "80px")};
+
+    /* Positional properties */
+    top: -20px;
+  }
+
+  @media only screen and (max-width: 175px) {
+    /* Box model properties */
+    max-height: ${(props) => (props.showMenu ? "100vh" : "75px")};
+
+    /* Positional properties */
+    top: -15px;
+  }
+`
+
+export const StyledWebsiteHeaderImage = styled.img`
+  /* Box model properties */
+  height: 200px;
+  margin: 0px auto;
+
+  /* Layout properties */
+  display: block;
+
+  /* Media queries */
+  @media only screen and (max-width: 800px) {
+    /* Box model properties */
+    height: 80px;
+  }
+
+  /* Media queries */
+  @media only screen and (max-width: 375px) {
+    /* Box model properties */
+    height: 60px;
+  }
+
+  @media only screen and (max-width: 310px) {
+    /* Box model properties */
+    height: 40px;
+  }
+
+  @media only screen and (max-width: 250px) {
+    /* Box model properties */
+    height: 20px;
+  }
+
+  @media only screen and (max-width: 175px) {
+    /* Box model properties */
+    height: 15px;
   }
 `
 
 export const StyledWebsiteTitleBar = styled.div`
   /* Box model properties */
-  height: 90px;
+  height: 60px;
 
   /* Layout properties */
   display: flex;
@@ -188,7 +256,7 @@ export const StyledMobileWebsiteTitle = styled.h2`
   }
 
   @media only screen and (max-width: 310px) {
-    /* Typography proprties */
+    /* Typography properties */
     font-size: 20px;
   }
 
