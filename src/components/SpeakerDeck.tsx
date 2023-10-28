@@ -14,7 +14,7 @@ const SpeakerDeck = ({ title, src }: SpeakerDeckProps): React.JSX.Element => {
   return (
     <StyledDiv>
       <StyledTitle>{title}</StyledTitle>
-      <StyledIFrame src={src}></StyledIFrame>
+      <StyledIFrame src={src} allow="fullscreen"></StyledIFrame>
     </StyledDiv>
   )
 }
