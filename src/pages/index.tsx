@@ -13,6 +13,10 @@ import jpIndexLocales from "../../locales/jp/index.json"
 
 const speakerDecks = [
   {
+    title: "Come and Get It",
+    src: "https://speakerdeck.com/wishterias/come-and-get-it",
+  },
+  {
     title: "Here, Kitty!",
     src: "https://speakerdeck.com/player/134a56d93b6344acaaf7c8051fd54b0b",
   },
