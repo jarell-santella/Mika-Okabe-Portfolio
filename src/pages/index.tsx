@@ -14,7 +14,7 @@ import jpIndexLocales from "../../locales/jp/index.json"
 const speakerDecks = [
   {
     title: "Come and Get It",
-    src: "https://speakerdeck.com/wishterias/come-and-get-it",
+    src: "https://speakerdeck.com/player/d5d71859a92d4c4dbffd7cebd0daa859",
   },
   {
     title: "Here, Kitty!",
